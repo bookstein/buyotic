@@ -19,6 +19,13 @@ $(document).ready(function() {
 //if user is on a desktop/laptop (use media query!) and not logged in then user must enter zip code
 	$("#submit").click(function() {
 
+		//creates an object containing checked input
+		var checked = [];
+		$("input:checkbox:checked").each(function () {
+			checked.push($(this).val());
+			return checked;
+		});
+
 		//create objects containing meat choices data, and zip code
 		function MeatChoices (checked) {
 			//user may choose more than one kind of meat
