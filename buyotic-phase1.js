@@ -1,20 +1,24 @@
 $(document).ready(function() {
 
-	// define a class to create "meat choices" objects
-	function MeatChoice (meat) {
-		this.meat = meat;
-	};
+	$("#choose-purpose").find("button").click(function () {
 
-	function seeLocations(choice) {
-		window.location.href = "http://www.google.com/?q="+choice.meat;
-	};
+		$("#choose-purpose").css("display", "none");
 
-	$("button").click(function () {
-		var btnValue = $(this).attr("value");
-		var choice = new MeatChoice(btnValue);
-		seeLocations(choice);
-	})
+		if ($(this).val() == "find") {
+			$("#find-meat").css("display", "block");
+		}
 
+		else {
+			$("#demand-meat").css("display", "block");
+		}
+	});
+
+	$("")
+
+	$(".meat-choice").find("button").click(function (e) {
+		e.preventDefault();
+		window.location.href = "http://www.google.com/?q=" + $(this).attr('value');
+	});
 
 
 });
