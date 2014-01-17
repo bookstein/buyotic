@@ -32,11 +32,48 @@
 
       <section id="find-meat">
         <h3>What kind of meat are you looking for?</h3>
-        <div class="meat-choice">
+
+        <!-- mobile meat choice set to display:none by default -->
+        <div class="meat-choice mobile-meat-choice">
           <button id="beef" value="beef">Beef</button>
           <button id="chicken" value="chicken">Chicken</button>
           <button id="pork" value="pork">Pork</button>
           <button id="fish" value="fish">Fish</button>
+        </div>
+
+        <div class="meat-choice desktop-meat-choice">
+          <form class="form-inline" role="form">
+            <div class="checkbox" id="beef">
+              <label>
+                <input type="checkbox" value="beef"> Beef
+              </label>
+            </div>
+            <div class="checkbox" id="chicken">
+              <label>
+                <input type="checkbox" value="chicken"> Chicken
+              </label>
+            </div>
+            <div class="checkbox" id="pork">
+              <label>
+                <input type="checkbox" value="pork"> Pork
+              </label>
+            </div>
+            <div class="checkbox" id="fish">
+              <label>
+                <input type="checkbox" value="fish"> Fish
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <br>
+        <!-- on laptops only, if not logged into FB -->
+        <div id="enter-zip" class="enter-zip desktop-meat-choice">
+          <p>What is your zip code?</p>
+          <input id="zip" value="" placeholder="Enter zip code"></input>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary" id="submit">Find my meat!</button>
         </div>
       </section>
 

@@ -78,3 +78,14 @@ header h1, h3 {
 	display: none;
 }
 
+.desktop-meat-choice {
+	display: block;
+}
+
+.mobile-meat-choice {
+	display: none;
+}
+
+.checkbox {
+	margin-right: 10px;
+}
