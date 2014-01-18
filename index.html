@@ -35,14 +35,16 @@
 
         <!-- mobile meat choice set to display:none by default -->
         <div class="meat-choice mobile-meat-choice">
-          <button id="beef" value="beef">Beef</button>
-          <button id="chicken" value="chicken">Chicken</button>
-          <button id="pork" value="pork">Pork</button>
-          <button id="fish" value="fish">Fish</button>
+          <form class="form-control">
+            <button id="beef" value="beef">Beef</button>
+            <button id="chicken" value="chicken">Chicken</button>
+            <button id="pork" value="pork">Pork</button>
+            <button id="fish" value="fish">Fish</button>
+          </form>
         </div>
 
         <div class="meat-choice desktop-meat-choice">
-          <form class="form-inline" role="form">
+          <form class="form-inline form-control" id="meat-types" role="form">
             <div class="checkbox" id="beef">
               <label>
                 <input type="checkbox" value="beef"> Beef
@@ -64,17 +66,53 @@
               </label>
             </div>
           </form>
-        </div>
-
-        <br>
-        <!-- on laptops only, if not logged into FB -->
-        <div id="enter-zip" class="enter-zip desktop-meat-choice">
-          <p>What is your zip code?</p>
-          <input id="zip" value="" placeholder="Enter zip code"></input>
+          <hr>
+          <p> Advanced Search </p>
+          <form id="search-options" class="form-inline form-control">
+              <div class="checkbox" id="organic">
+                <label>
+                  <input type="checkbox" value="organic"> Organic
+                </label>
+              </div>
+              <div class="checkbox" id="local">
+                <label>
+                  <input type="checkbox" value="local"> Local (under 500 mi.)
+                </label>
+              </div>
+              <div class="checkbox" id="lean">
+                <label>
+                  <input type="checkbox" value="lean"> Lean
+                </label>
+              </div>
+              <div class="checkbox" id="free-range">
+                <label>
+                  <input type="checkbox" value="free-range"> Free-range
+                </label>
+              </div>
+          </form>
+          <br>
+          <hr>
+          <br>
+            <!-- on laptops only, if not logged into FB -->
+          <div id="enter-zip" class="enter-zip desktop-meat-choice">
+            <p>What is your zip code?</p>
+            <input id="zip" value="" placeholder="Enter zip code"></input>
+            <br>
+            <br>
+            <p>Seach radius</p>
+            <span class="caret"></span>
+            <select>
+              <option value="1-mi">1 mi.</option>
+              <option value="5-mi">5 mi.</option>
+              <option value="10-mi">10 mi.</option>
+            </select>
+            <br>
+          </div>
           <br>
           <br>
           <button type="submit" class="btn btn-primary" id="submit">Find my meat!</button>
         </div>
+      </div>
       </section>
 
       <section id="demand-meat">
