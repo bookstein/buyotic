@@ -28,10 +28,10 @@ $(document).ready(function() {
 
 	function MeatChoice (checkedMeat, checkedOptions) {
 		this.checkedMeat = checkedMeat;
-		this.organic = checkedOptions.organic;
-		this.local = checkedOptions.local;
-		this.lean = checkedOptions.lean;
-		this.freeRange = checkedOptions.freeRange;
+		this.organic = checkedOptions[0];
+		this.local = checkedOptions[1];
+		this.lean = checkedOptions[2];
+		this.freeRange = checkedOptions[3];
 	};
 
 	//why is this part so repetitious? how could i do it better?
@@ -43,16 +43,16 @@ $(document).ready(function() {
 	var lean = $("#lean").find("input");
 	var freeRange = $("#free-range").find("input");*/
 
-	var checkedOptions = [];
-		$("#search-options").find("input:checkbox").each(function () {
-			if(this).is(":checked") {
-				checkedOptions.push($(this).val(true));
-			}
-			else {
-				checkedOptions.push($(this)val(false));
-			}
-			return checkedOptions;
-		});
+// an array is not ideal because I don't want it to depend on order
+// I just want to create an object with property labels!!
+// change array into object checkedOptions
+
+	var checkedOptions = {};
+	$("#search-options").find("input:checkbox:checked").each(function () {
+		var property = $(this).val();
+		checkedOptions[property] = true;
+		return checkedOptions;
+	});
 
 // never got this to work because of difficulty finding a way to run through properties
 	// while using property name as substitute for jQuery call (e.g. $("#organic").find("input")... )
@@ -75,8 +75,6 @@ $(document).ready(function() {
 			checkedMeat.push($(this).val());
 			return checkedMeat;
 		});
-
-
 
 		for (var i = 0; i <= checkedMeat.length; i++) {
 			if (checkedMeat[i]) {
