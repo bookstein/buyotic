@@ -64,6 +64,33 @@
               </label>
             </div>
           </form>
+
+          <hr>
+
+          <form class="form-inline">
+            <div id="advanced-search">
+              <div class="checkbox" id="organic">
+                <label>
+                  <input type="checkbox" value="organic"> Organic
+                </label>
+              </div>
+              <div class="checkbox" id="local">
+                <label>
+                  <input type="checkbox" value="local"> Local (under 500 mi.)
+                </label>
+              </div>
+              <div class="checkbox" id="lean">
+                <label>
+                  <input type="checkbox" value="lean"> Lean
+                </label>
+              </div>
+              <div class="checkbox" id="free-range">
+                <label>
+                  <input type="checkbox" value="free-range"> Free-range
+                </label>
+              </div>
+            </div>
+          </form>
         </div>
 
         <br>
@@ -72,6 +99,13 @@
           <p>What is your zip code?</p>
           <input id="zip" value="" placeholder="Enter zip code"></input>
           <br>
+          <p>Seach radius</p>
+          <span class="caret"></span>
+          <select>
+            <option value="1-mi">1 mi.</option>
+            <option value="5-mi">5 mi.</option>
+            <option value="10-mi">10 mi.</option>
+          </select>
           <br>
           <button type="submit" class="btn btn-primary" id="submit">Find my meat!</button>
         </div>
