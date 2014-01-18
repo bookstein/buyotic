@@ -43,19 +43,26 @@ $(document).ready(function() {
 	var lean = $("#lean").find("input");
 	var freeRange = $("#free-range").find("input");*/
 
+//hash map
+	var checkedOptionsObj = {
+		organic: 0,
+		local: 1,
+		lean: 2,
+		freeRange: 3
+	};
 
 	// never got this to work because of difficulty finding a way to run through properties
 		// while using property name as substitute for jQuery call (e.g. $("#organic").find("input")... )
 
-		/*for (property in checkedOptions) {
+	for (property in checkedOptionsObj) {
 
-			if($(option).find("input").is(":checked")) {
-				checkedOptions[property] = true;
-			}
-			else {
-				checkedOptions[property] = false;
-			}
-		}*/
+		if($("#" + property).find("input").is(":checked")) {
+			checkedOptionsObj[property] = true;
+		}
+		else {
+			checkedOptionsObj[property] = false;
+		}
+	}
 
 	$("#submit").click(function() {
 
