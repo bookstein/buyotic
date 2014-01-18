@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+
+	var buyotic = function () {
+	//User pledges to buy ABF meat
+	//
+	//
+
+	// User chooses use case
 	$("#choose-purpose").find("button").click(function () {
 		$("#choose-purpose").css("display", "none");
 		if ($(this).val() === "find") {
@@ -10,13 +17,9 @@ $(document).ready(function() {
 		}
 	});
 
-//if user is on an iPhone (use media query!) then clicking meat button will go straight to page
-	$(".meat-choice").find("button").click(function (e) {
-		e.preventDefault();
-		window.location.href = "http://www.google.com/?q=" + $(this).attr('value');
-	});
-
-//if user is on a desktop/laptop (use media query!) and not logged in then user must enter zip code
+	// User looks for crowdsourced data about meat in their local area
+	//
+	//
 	$("#submit").click(function() {
 
 		//creates an object containing checked input
@@ -25,28 +28,64 @@ $(document).ready(function() {
 			checked.push($(this).val());
 			return checked;
 		});
-
-		//create objects containing meat choices data, and zip code
-		function MeatChoices (checked) {
-			//user may choose more than one kind of meat
-			this.beef = checked;
-			this.chicken = checked;
-			this.pork = checked;
-			this.fish = checked;
-			this.zip = $("#zip").val(); //add to prototype later?
-		};
-
-		var meatChoices = new MeatChoices();
-
-		for (var meat in meatChoices) {
-			//use booleans
-			if (meatChoices[meat]) {
-
-			}
-
-		}
+	});
 
 
-	})
+	// User submits data about meat in local area (crowdsourcing)
+	//
+	//
+
+
+
+
+
+
+	// User sends a message to store management asking for brands/certifications
+	//
+	//
+		//View
+			// get retailer name, address, twitter handle, prompted by user entry
+			var retailerName = function () {
+
+				var retailerName = $("#retailer-name").val();
+
+			};
+
+			// get store contact email address (e.g. customerservice@berkeleybowl.com) and logo/face/image
+
+			// autopopulate a tweet and an email -- user chooses which one to send
+
+			// after message is sent, ask user for permission to be added to Buyotic wall
+
+		//Data
+			// match user entry with store info already in database
+
+			// ?? send message to correct email address/twitter handle (POST?)
+
+			// data also stored in Buyotic database: user info, request made, store name, meat type
+
+		//Control
+
+			// user selects/confirms store
+
+			// user sends message
+
+
+
+
+
+
+
+	// User shares their message on social networks via Buyotic
+	//
+	//
+
+	};
+
+
+
+
+
+
 
 });
