@@ -62,6 +62,8 @@ header h1, h3 {
 	width: 129px;
 }
 
+/* CHOOSE PURPOSE */
+
 #choose-purpose {
 	text-align: center;
 	margin-right: auto;
@@ -86,6 +88,26 @@ header h1, h3 {
 	display: none;
 }
 
+/* FIND MEAT */
+
 .checkbox {
 	margin-right: 10px;
+}
+
+/* DEMAND MEAT */
+
+#retailer-name {
+	width: 200px;
+	line-height: 2em;
+	font-size: 1.2em;
+}
+
+.certification {
+	width: 180px;
+	height: 180px;
+}
+
+.brand {
+	width: auto;
+	height: auto;
 }
