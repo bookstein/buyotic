@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
 
-	var buyotic = function () {
+	//var buyotic = function () {
+
 	//User pledges to buy ABF meat
 	//
 	//
@@ -17,9 +18,18 @@ $(document).ready(function() {
 		}
 	});
 
-	// User looks for crowdsourced data about meat in their local area
+	// User looks for meat in their local area
 	//
 	//
+
+	function MeatChoice (meatType, advancedSearch) {
+		this.meatType = meatType;
+		this.organic = advancedSearch.organic;
+		this.local = advancedSearch.local;
+		this.lean = advancedSearch.lean;
+		this.freeRange = advancedSearch.freeRange;
+	};
+
 	$("#submit").click(function() {
 
 		//creates an object containing checked input
@@ -28,6 +38,13 @@ $(document).ready(function() {
 			checked.push($(this).val());
 			return checked;
 		});
+
+		for (var i = 0; i <= checked.length; i++) {
+			if (checked[i]) {
+				var meat = new MeatChoice();
+			}
+		}
+
 	});
 
 
@@ -80,12 +97,7 @@ $(document).ready(function() {
 	//
 	//
 
-	};
-
-
-
-
-
+	//};
 
 
 });
