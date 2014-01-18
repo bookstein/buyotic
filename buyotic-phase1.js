@@ -46,20 +46,13 @@ $(document).ready(function() {
 	var checkedOptions = [];
 		$("#search-options").find("input:checkbox").each(function () {
 			if(this).is(":checked") {
-				checkedOptions.push($(this).val());
+				checkedOptions.push($(this).val(true));
 			}
 			else {
-				checkedOptions.push($(this)val("false"));
+				checkedOptions.push($(this)val(false));
 			}
 			return checkedOptions;
 		});
-
-	var checkedOptions = {
-		organic : true,
-		local : true,
-		lean : true,
-		freeRange : true
-	};
 
 // never got this to work because of difficulty finding a way to run through properties
 	// while using property name as substitute for jQuery call (e.g. $("#organic").find("input")... )
