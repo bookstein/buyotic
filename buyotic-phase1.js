@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-	var buyotic = function () {
+//	var buyotic = function () {
 	//User pledges to buy ABF meat
 	//
 	//
@@ -80,7 +80,7 @@ $(document).ready(function() {
 	//
 	//
 
-	};
+//	};
 
 
 
