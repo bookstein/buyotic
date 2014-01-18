@@ -12,9 +12,11 @@ $(document).ready(function() {
 		$("#choose-purpose").css("display", "none");
 		if ($(this).val() === "find") {
 			$("#find-meat").css("display", "block");
+			location = "#find-meat";
 		}
 		else {
 			$("#demand-meat").css("display", "block");
+			location = "#demand-meat";
 		}
 	});
 
