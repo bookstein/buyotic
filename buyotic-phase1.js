@@ -22,28 +22,78 @@ $(document).ready(function() {
 	//
 	//
 
-	function MeatChoice (meatType, advancedSearch) {
-		this.meatType = meatType;
-		this.organic = advancedSearch.organic;
-		this.local = advancedSearch.local;
-		this.lean = advancedSearch.lean;
-		this.freeRange = advancedSearch.freeRange;
+		// user meats entered in array
+		// each item in array will become an object in MeatChoice
+		// each meat type will share the same array of checked options
+
+	function MeatChoice (checkedMeat, checkedOptions) {
+		this.checkedMeat = checkedMeat;
+		this.organic = checkedOptions.organic;
+		this.local = checkedOptions.local;
+		this.lean = checkedOptions.lean;
+		this.freeRange = checkedOptions.freeRange;
 	};
+
+	//why is this part so repetitious? how could i do it better?
+	// what does it mean to write these vars with $? (see thomas's example with $target)
+	// i am trying really hard to get some practice with the for-in loop and that's why I'm going out of my way!
+
+	/*var organic = $("#organic").find("input");
+	var local = $("#local").find("input");
+	var lean = $("#lean").find("input");
+	var freeRange = $("#free-range").find("input");*/
+
+	var checkedOptions = [];
+		$("#search-options").find("input:checkbox").each(function () {
+			if(this).is(":checked") {
+				checkedOptions.push($(this).val());
+			}
+			else {
+				checkedOptions.push($(this)val("false"));
+			}
+			return checkedOptions;
+		});
+
+	var checkedOptions = {
+		organic : true,
+		local : true,
+		lean : true,
+		freeRange : true
+	};
+
+// never got this to work because of difficulty finding a way to run through properties
+	// while using property name as substitute for jQuery call (e.g. $("#organic").find("input")... )
+
+	/*for (property in checkedOptions) {
+
+		if($(option).find("input").is(":checked")) {
+			checkedOptions[property] = true;
+		}
+		else {
+			checkedOptions[property] = false;
+		}
+	}*/
 
 	$("#submit").click(function() {
 
-		//creates an object containing checked input
-		var checked = [];
-		$("input:checkbox:checked").each(function () {
-			checked.push($(this).val());
-			return checked;
+		//creates an array containing checked input
+		var checkedMeat = [];
+		$("#meat-types").find("input:checkbox:checked").each(function () {
+			checkedMeat.push($(this).val());
+			return checkedMeat;
 		});
 
-		for (var i = 0; i <= checked.length; i++) {
-			if (checked[i]) {
-				var meat = new MeatChoice();
+
+
+		for (var i = 0; i <= checkedMeat.length; i++) {
+			if (checkedMeat[i]) {
+				var meat = checked[i];
+				console.log(meat);
+				meat = new MeatChoice();
 			}
 		}
+
+
 
 	});
 
