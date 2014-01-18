@@ -22,9 +22,11 @@ If user selects a retailer, an email is sent to their inbox asking them to confi
 If only 1 or 0 places are listed within the X-mile radius, the program pops up a "send a message" dialog. "Can't find what you want? Demand that retailers sell antibiotic-free meat!"
 
 USE CASE 3: CAN'T FIND THE MEAT***
-User is at the grocery store or is searching from home for ABF meat. They don't see the right meat in the store or they don't see the listing online. Frustrated and angry, they click "send a message" on their desktops or phones.
+User is at the grocery store (or is searching from home on Buyotic.org) for ABF meat. They don't see the right meat in the store (or they don't see the listing online). Frustrated and angry, they click "send a message" on their desktops or phones.
 Using their GPS location (phones) or by asking the user to select the store they're at (or angry at), the app generates a pre-filled tweet or email targeted at either the company twitter handle or at the store manager.
 The user modifies the message (if they want) and then sends it.
+
+USE CASE 3.5: SHARING THE MOVEMENT
 The app asks for permission to share the message on Buyotic. If the user agrees, they are taken to the Buyotic page and see their message on a "wall" of support from other users.
 A pop-up asks if they'll share their action with others in their social networks. If they agree, a dialog allows them to share to FB or Twitter or other.
 
