@@ -28,13 +28,16 @@ $(document).ready(function() {
 		// each item in array will become an object in MeatChoice
 		// each meat type will share the same array of checked options
 
-	function MeatChoice (checkedMeat, checkedOptions) {
+	function MeatChoice (checkedMeat, checkedOptions, location) {
 		this.checkedMeat = checkedMeat;
 		this.organic = checkedOptions.organic;
 		this.local = checkedOptions.local;
 		this.lean = checkedOptions.lean;
 		this.freeRange = checkedOptions.freeRange;
+		this.zip = $("#zip").val();
+		this.radius = $("#radius").val();
 	};
+
 
 	//why is this part so repetitious? how could i do it better?
 	// what does it mean to write these vars with $? (see thomas's example with $target)
@@ -98,7 +101,9 @@ $(document).ready(function() {
 	// User submits data about meat in local area (crowdsourcing)
 	//
 	//
-
+	// use node (or MySQL) to interact with Firebase or MongoDB (backend)
+	// node = do it all in JS!
+	// npm can be used to install Mongo or SQL
 
 
 
@@ -109,11 +114,10 @@ $(document).ready(function() {
 	//
 		//View
 			// get retailer name, address, twitter handle, prompted by user entry
-			var retailerName = function () {
+			$.ajax()
 
-				var retailerName = $("#retailer-name").val();
+			//libraries that do dropdown autocomplete - jQuery autocomplete
 
-			};
 
 			// get store contact email address (e.g. customerservice@berkeleybowl.com) and logo/face/image
 
