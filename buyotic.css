@@ -70,7 +70,7 @@ header h1, h3 {
 	margin-left: auto;
 }
 
-.right-column, .left-column {
+.right-column, .middle-column, .left-column {
 	display: inline-block;
 	margin: 0 15px 0 15px;
 	width: 300px;
