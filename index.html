@@ -122,7 +122,7 @@
             <!-- on laptops only, if not logged into FB -->
           <div id="enter-zip" class="enter-zip desktop-meat-choice">
             <p>What is your zip code?</p>
-            <input id="zip" value="" placeholder="Enter zip code"></input>
+            <input type="text" id="zip" value="" placeholder="Enter zip code"></input>
             <br>
             <br>
             <p>Seach radius</p>
@@ -155,25 +155,27 @@
 
         <h3>Send a message: we want antibiotic-free meat!</h3>
           <h4>Where will you send this message?</h4>
-          <input id="retailer-name-search" class="retailer-name" value="" placeholder="Retailer name"></input>
+          <input type="text" id="retailer-name-search" class="retailer-name" value="" placeholder="Retailer name"></input>
           <br>
           <br>
           <h4>Optional: Choose certified brands or producers that you want to them to stock:</h4>
-          <button><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
-          <button><img class="brand" id="marys" src="images/marys.jpeg" /></button>
+          <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
+          <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
           <br>
           <br>
           <hr>
           <div id="message-body">
-            <h3>Message to<span class="retailer-name">Retailer</span>:</h3>
+            <h3>Message to <span class="retailer-name">Retailer</span>:</h3>
+            <br>
+            <br>
+            <label><h4>I want to buy antibiotic-free meat products with these certifications.</h4></label>
+            <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
+            <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
+            <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
+            <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
+            <br>
+            <br>
             <form class="form-control">
-              <label><h4>I want to buy antibiotic-free meat products with these certifications.</h4></label>
-              <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
-              <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
-              <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
-              <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
-              <br>
-              <br>
               <textarea rows="4" id="message-text">
                 I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
               </textarea>

@@ -105,6 +105,12 @@ header h1, h3 {
 	font-size: 1.2em;
 }
 
+#message-body {
+	margin: 20px;
+	border: 2px dotted black;
+	background-color: gray;
+}
+
 .certification {
 	width: 180px;
 	height: 180px;
