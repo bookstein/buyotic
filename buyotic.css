@@ -76,7 +76,7 @@ header h1, h3 {
 	width: 300px;
 }
 
-#find-meat, #demand-meat {
+#find-meat, #found-meat, #demand-meat {
 	display: none;
 }
 
@@ -93,6 +93,9 @@ header h1, h3 {
 .checkbox {
 	margin-right: 10px;
 }
+
+/* FOUND MEAT */
+
 
 /* DEMAND MEAT */
 
