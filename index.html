@@ -14,6 +14,9 @@
 
     <div class="container">
 
+
+
+
       <section id="choose-purpose">
         <div class="right-column">
           <h3>Looking for antibiotic-free meat near you?</h3>
@@ -29,6 +32,12 @@
           </button>
         </div>
       </section>
+
+
+
+
+
+
 
       <section id="find-meat">
         <h3>What kind of meat are you looking for?</h3>
@@ -115,30 +124,54 @@
       </div>
       </section>
 
+
+
+
+
+
       <section id="demand-meat">
         <h3>Send a message: we want antibiotic-free meat!</h3>
           <h4>Where will you send this message?</h4>
-          <input id="retailer-name" value="" placeholder="Retailer name"></input>
+          <input id="retailer-name-search" class="retailer-name" value="" placeholder="Retailer name"></input>
           <br>
           <br>
-          <h4>Please stock meat products with these certifications -- and without antibiotics.</h4>
-          <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
-          <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
-          <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
-          <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
+          <h4>Optional: Choose certified brands or producers that you want to them to stock:</h4>
+          <button><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
+          <button><img class="brand" id="marys" src="images/marys.jpeg" /></button>
           <br>
           <br>
-          <textarea class="form-control" rows="4" id="message-text">
-            I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
-          </textarea>
+          <hr>
+          <div id="message-body">
+            <h3>Message to<span class="retailer-name">Retailer</span>:</h3>
+            <form class="form-control">
+              <label><h4>I want to buy antibiotic-free meat products with these certifications.</h4></label>
+              <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
+              <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
+              <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
+              <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
+              <br>
+              <br>
+              <textarea rows="4" id="message-text">
+                I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
+              </textarea>
+              <br>
+              <label>Signed,</label>
+              <br>
+              <input id="name-signature" type="text"></input>
+              <br>
+              <label>Zip code:</label>
+              <input id="zip-signature" type="text"></input>
+            </form>
+            <br>
+            <button type="submit" class="btn btn-primary" id="submit-demand">Send Message!</button>
+            <br>
+          </div> <!-- end of message-body -->
           <br>
-          <button type="submit" class="btn btn-primary" id="submit">Send Message!</button>
-          <br>
-          <br>
-          <h4>Brands or producers that have these certifications:</h4>
-          <img class="brand" id="applegate" src="images/applegate.jpeg" />
-          <img class="brand" id="marys" src="images/marys.jpeg" />
       </section>
+
+
+
+
 
 
     </div><!-- end of container -->
