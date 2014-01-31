@@ -130,8 +130,12 @@ $(document).ready(function() {
 					$("#message-text").attr("action", "mailto"+data.storeContact); // insert contact info into "mailto" action attribute
 						// show retailer address in span #retailer-address
 					$("#retailer-address").text(data.storeAddress);
-				}
-			})
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+        			console.log(xhr.status);
+        			console.log(thrownError);
+      			}
+			});
 		});
 
 
