@@ -1,0 +1,8 @@
+[
+	{"storeName": "Whole Foods",
+	"storeAddress": "301 Emeryville",
+	"storeContact": "contact@wholefoods.com"},
+	{"storeName": "Trader Joe's",
+	"storeAddress": "900 University Ave",
+	"storeContact": "contact@traderjoes.com"}
+];

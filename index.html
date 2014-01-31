@@ -14,6 +14,9 @@
 
     <div class="container">
 
+
+
+
       <section id="choose-purpose">
         <div class="right-column">
           <h3>Looking for antibiotic-free meat near you?</h3>
@@ -22,27 +25,52 @@
           </button>
         </div>
 
+        <div class="middle-column">
+          <h3>Found a good place to get antibiotic-free meat?</h3>
+          <br>
+          <button id="found" value="found" class="btn btn-primary">Share Resource</button>
+        </div>
+
         <div class="left-column">
           <h3>Can't find antibiotic-free meat at a store near you?</h3>
           <br>
           <button id="demand" value="demand" class="btn btn-primary">Demand Meat
           </button>
         </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <a href="www.buyotic.org">Continue to Buyotic >> </a>
       </section>
 
+
+
+
+
+
+
       <section id="find-meat">
+
+        <button class="go-back btn btn-sm">Go back</button>
+        <br>
+        <br>
+
         <h3>What kind of meat are you looking for?</h3>
 
         <!-- mobile meat choice set to display:none by default -->
         <div class="meat-choice mobile-meat-choice">
-          <button id="beef" value="beef">Beef</button>
-          <button id="chicken" value="chicken">Chicken</button>
-          <button id="pork" value="pork">Pork</button>
-          <button id="fish" value="fish">Fish</button>
+          <form class="form-control">
+            <button id="beef" value="beef">Beef</button>
+            <button id="chicken" value="chicken">Chicken</button>
+            <button id="pork" value="pork">Pork</button>
+            <button id="fish" value="fish">Fish</button>
+          </form>
         </div>
 
         <div class="meat-choice desktop-meat-choice">
-          <form class="form-inline" role="form">
+          <form class="form-inline form-control" id="meat-types" role="form">
             <div class="checkbox" id="beef">
               <label>
                 <input type="checkbox" value="beef"> Beef
@@ -64,43 +92,111 @@
               </label>
             </div>
           </form>
-        </div>
-
-        <br>
-        <!-- on laptops only, if not logged into FB -->
-        <div id="enter-zip" class="enter-zip desktop-meat-choice">
-          <p>What is your zip code?</p>
-          <input id="zip" value="" placeholder="Enter zip code"></input>
+          <hr>
+          <p> Advanced Search </p>
+          <form id="search-options" class="form-inline form-control">
+              <div class="checkbox" id="organic">
+                <label>
+                  <input type="checkbox" value="organic"> Organic
+                </label>
+              </div>
+              <div class="checkbox" id="local">
+                <label>
+                  <input type="checkbox" value="local"> Local (under 500 mi.)
+                </label>
+              </div>
+              <div class="checkbox" id="lean">
+                <label>
+                  <input type="checkbox" value="lean"> Lean
+                </label>
+              </div>
+              <div class="checkbox" id="free-range">
+                <label>
+                  <input type="checkbox" value="free-range"> Free-range
+                </label>
+              </div>
+          </form>
+          <br>
+          <hr>
+          <br>
+            <!-- on laptops only, if not logged into FB -->
+          <div id="enter-zip" class="enter-zip desktop-meat-choice">
+            <p>What is your zip code?</p>
+            <input type="text" id="zip" value="" placeholder="Enter zip code"></input>
+            <br>
+            <br>
+            <p>Seach radius</p>
+            <span class="caret"></span>
+            <select id="radius">
+              <option value="1">1 mi.</option>
+              <option value="5">5 mi.</option>
+              <option value="10">10 mi.</option>
+            </select>
+            <br>
+          </div>
           <br>
           <br>
           <button type="submit" class="btn btn-primary" id="submit">Find my meat!</button>
         </div>
+      </div>
       </section>
 
-      <section id="demand-meat">
-        <h3>Send a message: we want antibiotic-free meat!</h3>
-          <h4>Where will you send this message?</h4>
-          <input id="retailer-name" value="" placeholder="Retailer name"></input>
-          <br>
-          <br>
-          <h4>Please stock meat products with these certifications -- and without antibiotics.</h4>
-          <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
-          <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
-          <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
-          <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
-          <br>
-          <br>
-          <textarea class="form-control" rows="4" id="message-text">
-            I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
-          </textarea>
-          <br>
-          <button type="submit" class="btn btn-primary" id="submit">Send Message!</button>
-          <br>
-          <br>
-          <h4>Brands or producers that have these certifications:</h4>
-          <img class="brand" id="applegate" src="images/applegate.jpeg" />
-          <img class="brand" id="marys" src="images/marys.jpeg" />
+
+      <section id="found-meat">
       </section>
+
+
+
+      <section id="demand-meat">
+
+        <button class="go-back btn btn-sm">Go back</button>
+        <br>
+        <br>
+
+        <h3>Send a message: demand antibiotic-free meat!</h3>
+          <h4>Where will you send this message?</h4>
+          <input type="text" id="retailer-name-search" class="retailer-name" value="" placeholder="Retailer name"></input>
+          <br>
+          <br>
+          <h4>Optional: Choose certified brands or producers that you want to <span class="retailer-name">them</span> to stock:</h4>
+          <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
+          <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
+          <br>
+          <br>
+          <hr>
+          <div id="message-body">
+            <h3>Message to <span class="retailer-name">Retailer</span>:</h3>
+            <br>
+            <br>
+            <label><h4>I want to buy antibiotic-free meat products with these certifications.</h4></label>
+            <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
+            <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
+            <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
+            <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
+            <br>
+            <br>
+            <form id="message-text" class="form-control">
+              <textarea class="form-control" rows="4" id="message-text">
+                I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
+              </textarea>
+              <br>
+              <label>Signed,</label>
+              <br>
+              <input id="name-signature" type="text"></input>
+              <br>
+              <label>Zip code:</label>
+              <input id="zip-signature" type="text"></input>
+            </form>
+            <br>
+            <button type="submit" class="btn btn-primary" id="submit-demand">Send Message!</button>
+            <br>
+          </div> <!-- end of message-body -->
+          <br>
+      </section>
+
+
+
+
 
 
     </div><!-- end of container -->
