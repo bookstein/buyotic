@@ -114,18 +114,23 @@ $(document).ready(function() {
 	//
 	//
 		//View
-			// get retailer name, address, twitter handle, prompted by user entry
+		// get retailer name, address, twitter handle, prompted by user entry
 		$("#retailer-name-submit").on("click", function (event) {
 			event.preventDefault();
+			// text of input
 			$.ajax({
 				url: "retailerData.json",
 				dataType: "json",
-				success: function (name) {
-					$() // insert contact info into "mailto"
-						// show retailer address in span retailer-address
+				type: "get",
+				success: function (data) {
+					console.log(data);
+					var retailerName = $("#retailer-name-search").text();
+					$("#message-text").attr("action", "mailto"+data.storeContact); // insert contact info into "mailto" action attribute
+						// show retailer address in span #retailer-address
+					$("#retailer-address").text(data.storeAddress);
 				}
 			})
-		})
+		});
 
 
 			//libraries that do dropdown autocomplete - jQuery autocomplete
