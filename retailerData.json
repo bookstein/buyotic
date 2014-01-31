@@ -1,4 +1,4 @@
-[
+{
 	{"storeName": "Whole Foods",
 	"storeAddress": "301 Emeryville",
 	"storeContact": "contact@wholefoods.com"},
@@ -6,5 +6,6 @@
 	"storeAddress": "900 University Ave",
 	"storeContact": "contact@traderjoes.com"},
 	{"storeName": "Kroger's",
-	"storeContact": "contact@krogers.com"}
-];
+	"storeContact": "contact@krogers.com",
+	"storeAddress": "400 Lexington Ave"}
+};
