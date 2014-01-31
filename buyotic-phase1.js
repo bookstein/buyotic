@@ -115,7 +115,18 @@ $(document).ready(function() {
 	//
 		//View
 			// get retailer name, address, twitter handle, prompted by user entry
-			$.ajax()
+		$("#retailer-name-submit").on("click", function (event) {
+			event.preventDefault();
+			$.ajax({
+				url: "retailerData.json",
+				dataType: "json",
+				success: function (name) {
+					$() // insert contact info into "mailto"
+						// show retailer address in span retailer-address
+				}
+			})
+		})
+
 
 			//libraries that do dropdown autocomplete - jQuery autocomplete
 
