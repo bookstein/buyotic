@@ -70,7 +70,7 @@ $(document).ready(function() {
 		}
 	}
 
-	$("#submit").click(function() {
+	$("#submit-meat-search").click(function() {
 
 		//creates an array containing checked meat input
 		var checkedMeat = [];
