@@ -126,6 +126,8 @@ $(document).ready(function() {
 
 			// after message is sent, ask user for permission to be added to Buyotic wall
 
+
+
 		//Data
 			// match user entry with store info already in database
 
