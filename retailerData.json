@@ -1,0 +1,14 @@
+{
+	"Whole Foods":
+		{"storeName": "Whole Foods",
+		"storeAddress": "301 Emeryville",
+		"storeContact": "contact@wholefoods.com"},
+	"Trader Joe's":
+		{"storeName": "Trader Joe's",
+		"storeAddress": "900 University Ave",
+		"storeContact": "contact@traderjoes.com"},
+	"Kroger's":
+		{"storeName": "Kroger's",
+		"storeContact": "contact@krogers.com",
+		"storeAddress": "400 Lexington Ave"}
+};

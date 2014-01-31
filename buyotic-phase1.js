@@ -2,7 +2,9 @@ $(document).ready(function() {
 
 
 
+
 //	var buyotic = function () {
+
 
 	//User pledges to buy ABF meat
 	//
@@ -13,9 +15,11 @@ $(document).ready(function() {
 		$("#choose-purpose").css("display", "none");
 		if ($(this).val() === "find") {
 			$("#find-meat").css("display", "block");
+			location = "#find-meat";
 		}
 		else {
 			$("#demand-meat").css("display", "block");
+			location = "#demand-meat";
 		}
 	});
 
@@ -27,13 +31,16 @@ $(document).ready(function() {
 		// each item in array will become an object in MeatChoice
 		// each meat type will share the same array of checked options
 
-	function MeatChoice (checkedMeat, checkedOptions) {
+	function MeatChoice (checkedMeat, checkedOptions, location) {
 		this.checkedMeat = checkedMeat;
 		this.organic = checkedOptions.organic;
 		this.local = checkedOptions.local;
 		this.lean = checkedOptions.lean;
 		this.freeRange = checkedOptions.freeRange;
+		this.zip = $("#zip").val();
+		this.radius = $("#radius").val();
 	};
+
 
 	//why is this part so repetitious? how could i do it better?
 	// what does it mean to write these vars with $? (see thomas's example with $target)
@@ -44,21 +51,28 @@ $(document).ready(function() {
 	var lean = $("#lean").find("input");
 	var freeRange = $("#free-range").find("input");*/
 
+//hash map
+	var checkedOptionsObj = {
+		organic: 0,
+		local: 1,
+		lean: 2,
+		freeRange: 3
+	};
 
 	// never got this to work because of difficulty finding a way to run through properties
 		// while using property name as substitute for jQuery call (e.g. $("#organic").find("input")... )
 
-		/*for (property in checkedOptions) {
+	for (property in checkedOptionsObj) {
 
-			if($(option).find("input").is(":checked")) {
-				checkedOptions[property] = true;
-			}
-			else {
-				checkedOptions[property] = false;
-			}
-		}*/
+		if($("#" + property).find("input").is(":checked")) {
+			checkedOptionsObj[property] = true;
+		}
+		else {
+			checkedOptionsObj[property] = false;
+		}
+	}
 
-	$("#submit").click(function() {
+	$("#submit-meat-search").click(function() {
 
 		//creates an array containing checked meat input
 		var checkedMeat = [];
@@ -90,7 +104,9 @@ $(document).ready(function() {
 	// User submits data about meat in local area (crowdsourcing)
 	//
 	//
-
+	// use node (or MySQL) to interact with Firebase or MongoDB (backend)
+	// node = do it all in JS!
+	// npm can be used to install Mongo or SQL
 
 
 
@@ -100,18 +116,35 @@ $(document).ready(function() {
 	//
 	//
 		//View
-			// get retailer name, address, twitter handle, prompted by user entry
-			var retailerName = function () {
+		// get retailer name, address, twitter handle, prompted by user entry
+		$("#retailer-name-submit").on("click", function (event) {
+			event.preventDefault();
+			// text of input
+			$.ajax({
+				url: "retailerData.json",
+				dataType: "json",
+				type: "get",
+				success: function (data) {
+					console.log(data);
+					var retailerName = $("#retailer-name-search").text();
+					$("#message-text").attr("action", "mailto"+data.storeContact); // insert contact info into "mailto" action attribute
+						// show retailer address in span #retailer-address
+					$("#retailer-address").text(data.storeAddress);
+				}
+			})
+		});
 
-				var retailerName = $("#retailer-name").val();
 
-			};
+			//libraries that do dropdown autocomplete - jQuery autocomplete
+
 
 			// get store contact email address (e.g. customerservice@berkeleybowl.com) and logo/face/image
 
 			// autopopulate a tweet and an email -- user chooses which one to send
 
 			// after message is sent, ask user for permission to be added to Buyotic wall
+
+
 
 		//Data
 			// match user entry with store info already in database
@@ -136,8 +169,7 @@ $(document).ready(function() {
 	//
 	//
 
+
 //	};
-
-
 
 });
