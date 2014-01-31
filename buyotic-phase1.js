@@ -126,10 +126,10 @@ $(document).ready(function() {
 				type: "get",
 				success: function (data) {
 					console.log(data);
-					var retailerName = $("#retailer-name-search").text();
-					$("#message-text").attr("action", "mailto"+data.storeContact); // insert contact info into "mailto" action attribute
+					var retailerName = $("#retailer-name-search").val();
+					$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact); // insert contact info into "mailto" action attribute
 						// show retailer address in span #retailer-address
-					$("#retailer-address").text(data.storeAddress);
+					$("#retailer-address").text(data[retailerName].storeAddress);
 				},
 				error: function (xhr, ajaxOptions, thrownError) {
         			console.log(xhr.status);
