@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 
 
-//	var buyotic = function () {
+	var buyotic = (function () {
 
 
 	//User pledges to buy ABF meat
@@ -11,17 +11,19 @@ $(document).ready(function() {
 	//
 
 	// User chooses use case
-	$("#choose-purpose").find("button").on("click", function () {
-		$("#choose-purpose").css("display", "none");
-		if ($(this).val() === "find") {
-			$("#find-meat").css("display", "block");
-			location = "#find-meat";
-		}
-		else {
-			$("#demand-meat").css("display", "block");
-			location = "#demand-meat";
-		}
-	});
+	var chooseUserPurpose = (function () {
+		$("#choose-purpose").find("button").on("click", function () {
+			$("#choose-purpose").css("display", "none");
+			if ($(this).val() === "find") {
+				$("#find-meat").css("display", "block");
+				location = "#find-meat";
+			}
+			else {
+				$("#demand-meat").css("display", "block");
+				location = "#demand-meat";
+			}
+		});
+	};
 
 	// User looks for meat in their local area
 	//
@@ -174,6 +176,6 @@ $(document).ready(function() {
 	//
 
 
-//	};
+	});
 
 });
