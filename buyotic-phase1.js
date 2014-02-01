@@ -11,7 +11,7 @@ $(document).ready(function() {
 	//
 
 	// User chooses use case
-	$("#choose-purpose").find("button").click(function () {
+	$("#choose-purpose").find("button").on("click", function () {
 		$("#choose-purpose").css("display", "none");
 		if ($(this).val() === "find") {
 			$("#find-meat").css("display", "block");
