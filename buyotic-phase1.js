@@ -11,10 +11,10 @@ $(document).ready(function() {
 		//
 		var pledgeBuyotic = (function () {
 
-		});
+		})();
 
 		// User chooses use case
-		var chooseUserPurpose = (function () {
+		var userChoosesPurpose = (function () {
 			$("#choose-purpose").find("button").on("click", function () {
 				$("#choose-purpose").css("display", "none");
 				if ($(this).val() === "find") {
@@ -26,7 +26,7 @@ $(document).ready(function() {
 					location = "#demand-meat";
 				}
 			});
-		});
+		})();
 
 		// User looks for meat in their local area
 		//
@@ -104,7 +104,7 @@ $(document).ready(function() {
 					}
 				}
 			});
-		});
+		})();
 
 		// User submits data about meat in local area (crowdsourcing)
 		//
@@ -114,7 +114,7 @@ $(document).ready(function() {
 		// npm can be used to install Mongo or SQL
 		var reportMeat = (function() {
 
-		});
+		})();
 
 
 
@@ -175,7 +175,7 @@ $(document).ready(function() {
 
 
 
-		});
+		})();
 
 
 		// User shares their message on social networks via Buyotic
@@ -183,6 +183,6 @@ $(document).ready(function() {
 		//
 
 
-	});
+	})();
 
 });
