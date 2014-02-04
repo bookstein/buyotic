@@ -119,7 +119,15 @@ $(document).ready(function() {
 
 		// User sends a message to store management asking for brands/certifications
 		//
-		//
+		//View
+			//show retailer name, address
+
+		//Model
+			//ajax request
+
+		//Controller
+			//user enters retailers name
+			//user submits form
 		var demandMeat = (function() {
 
 			//View
