@@ -32,7 +32,9 @@ $(document).ready(function() {
 		})();
 
 		// User looks for meat in their local area
-		//
+		//View
+
+		//Model
 		//
 		var findMeat = (function() {
 			// user meats entered in array
@@ -49,26 +51,13 @@ $(document).ready(function() {
 				this.radius = $("#radius").val();
 			};
 
-
-			//why is this part so repetitious? how could i do it better?
-			// what does it mean to write these vars with $? (see thomas's example with $target)
-			// i am trying really hard to get some practice with the for-in loop and that's why I'm going out of my way!
-
-			/*var organic = $("#organic").find("input");
-			var local = $("#local").find("input");
-			var lean = $("#lean").find("input");
-			var freeRange = $("#free-range").find("input");*/
-
-		//hash map
+		/*hash map
 			var checkedOptionsObj = {
 				organic: 0,
 				local: 1,
 				lean: 2,
 				freeRange: 3
-			};
-
-			// never got this to work because of difficulty finding a way to run through properties
-				// while using property name as substitute for jQuery call (e.g. $("#organic").find("input")... )
+			};*/
 
 			for (property in checkedOptionsObj) {
 
@@ -80,16 +69,7 @@ $(document).ready(function() {
 				}
 			}
 
-			$("#submit-meat-search").click(function() {
-
-				//creates an array containing checked meat input
-				var checkedMeat = [];
-				$("#meat-types").find("input:checkbox:checked").each(function () {
-					checkedMeat.push($(this).val());
-					return checkedMeat;
-				});
-
-				// creates an object containing checked options
+			// creates an object containing checked options
 
 				var checkedOptions = {};
 				$("#search-options").find("input:checkbox:checked").each(function () {
@@ -106,6 +86,21 @@ $(document).ready(function() {
 						console.log(meat);
 					}
 				}
+
+		// Controller
+			function submitMeatSearch () {
+				$("#submit-meat-search").on("click", function() {
+					var checkedMeat = [];
+					$("#meat-types").find("input:checkbox:checked").each(function () {
+						checkedMeat.push($(this).val());
+						return checkedMeat;
+					});
+				});
+			};
+
+
+
+
 			});
 		})();
 
