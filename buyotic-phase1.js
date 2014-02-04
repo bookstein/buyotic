@@ -32,15 +32,11 @@ $(document).ready(function() {
 		})();
 
 		// User looks for meat in their local area
+		var findMeat = (function() {
 		//View
 
 		//Model
-		//
-		var findMeat = (function() {
-			// user meats entered in array
-			// each item in array will become an object in MeatChoice
-			// each meat type will share the same array of checked options
-
+		// user-submitted data
 			function MeatChoice (checkedMeat, checkedOptions, location) {
 				this.checkedMeat = checkedMeat;
 				this.organic = checkedOptions.organic;
@@ -119,43 +115,15 @@ $(document).ready(function() {
 
 		// User sends a message to store management asking for brands/certifications
 		//
-		//View
-			//show retailer name, address
 
-		//Model
-			//ajax request
-
-		//Controller
-			//user enters retailers name
-			//user submits form
 		var demandMeat = (function() {
 
 			//View
-			// get retailer name, address, twitter handle, prompted by user entry
-			$("#retailer-name-submit").on("click", function (event) {
-				event.preventDefault();
-				// text of input
-				$.ajax({
-					url: "retailerData.json",
-					dataType: "json",
-					type: "get",
-					success: function (data) {
-						console.log(data);
-						var retailerName = $("#retailer-name-search").val();
-						$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact); // insert contact info into "mailto" action attribute
-							// show retailer address in span #retailer-address
-						$("#retailer-address").text(data[retailerName].storeAddress);
-					},
-					error: function (xhr, ajaxOptions, thrownError) {
-	        			console.log(xhr.status);
-	        			console.log(thrownError);
-	      			}
-				});
-			});
+				//dropdown: an unordered list of stores whose names are in the database!
 
+				//filtered by user input (text)
 
 				//libraries that do dropdown autocomplete - jQuery autocomplete
-
 
 				// get store contact email address (e.g. customerservice@berkeleybowl.com) and logo/face/image
 
@@ -171,10 +139,32 @@ $(document).ready(function() {
 				// ?? send message to correct email address/twitter handle (POST?)
 
 				// data also stored in Buyotic database: user info, request made, store name, meat type
+				//ajax request
+			var req = $.ajax({
+					url: "retailerData.json",
+					dataType: "json",
+					type: "get",
+					success: function (data) {
+						console.log(data);
+						var retailerName = $("#retailer-name-search").val();
+						$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact); // insert contact info into "mailto" action attribute
+							// show retailer address in span #retailer-address
+						$("#retailer-address").text(data[retailerName].storeAddress);
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+	        			console.log(xhr.status);
+	        			console.log(thrownError);
+	      			}
+				});
+
+
 
 			//Control
 
 				// user selects/confirms store
+			$("#retailer-name-submit").on("click", function (event) {
+				event.preventDefault();
+			};
 
 				// user sends message
 
