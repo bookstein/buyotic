@@ -106,6 +106,10 @@ header h1, h3 {
 	font-size: 1.2em;
 }
 
+#message-text {
+	height: 300px;
+}
+
 #message-body {
 	margin: 20px;
 	border: 2px dotted black;
