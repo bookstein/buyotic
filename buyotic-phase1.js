@@ -14,18 +14,29 @@ $(document).ready(function() {
 		})();
 
 		// User chooses use case
+		//View
+
+		function findMeat () {
+			$("#find-meat").css("display", "block");
+			location = "#find-meat";
+		}
+
+		function demandMeat () {
+			$("#demand-meat").css("display", "block");
+			location = "#demand-meat";
+		}
+
+		function shareMeat () {
+			$("#found").css("display", "block");
+			location = "#share-meat";
+		}
+
+		//Model
+
+		// Controller
 		var userChoosesPurpose = (function () {
-			$("#choose-purpose").find("button").on("click", function () {
-				$("#choose-purpose").css("display", "none");
-				if ($(this).val() === "find") {
-					$("#find-meat").css("display", "block");
-					location = "#find-meat";
-				}
-				else {
-					$("#demand-meat").css("display", "block");
-					location = "#demand-meat";
-				}
-			});
+
+
 		})();
 
 		// User looks for meat in their local area
