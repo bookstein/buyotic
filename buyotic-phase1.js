@@ -35,7 +35,9 @@ $(document).ready(function() {
 
 		// Controller
 		var userChoosesPurpose = (function () {
+			$("#choose-purpose").on("click", "button", function(event) {
 
+			})
 
 		})();
 
