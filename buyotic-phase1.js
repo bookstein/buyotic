@@ -15,29 +15,19 @@ $(document).ready(function() {
 
 		// User chooses use case
 		//View
-
-		function findMeat () {
-			$("#find-meat").css("display", "block");
-			location = "#find-meat";
-		}
-
-		function demandMeat () {
-			$("#demand-meat").css("display", "block");
-			location = "#demand-meat";
-		}
-
-		function shareMeat () {
-			$("#found").css("display", "block");
-			location = "#share-meat";
+		function displayNextPage(id) {
+			$(this).css("display", "block");
+			location = $(this).val();
 		}
 
 		//Model
 
 		// Controller
 		var userChoosesPurpose = (function () {
-			$("#choose-purpose").on("click", "button", function(event) {
-
-			})
+			$("#choose-purpose").on("click.choose", "button", function(event) {
+				var btnID = $(this).attr("id");
+				displayNextPage(btnID);
+			});
 
 		})();
 
