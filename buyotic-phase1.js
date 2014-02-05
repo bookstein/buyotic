@@ -17,7 +17,7 @@ $(document).ready(function() {
 		//View
 		function displayNextPage(pageID) {
 			$(pageID).css("display", "block");
-			location = $(pageID).val();
+			//location = $(pageID).val();
 		}
 
 		//Model
@@ -25,6 +25,8 @@ $(document).ready(function() {
 		// Controller
 		var userChoosesPurpose = (function () {
 			$("#choose-purpose").on("click.choose", "button", function(event) {
+				event.preventDefault();
+				$("#choose-purpose").css("display", "none");
 				var buttonChoice = $(this).val();
 				displayNextPage(buttonChoice);
 			});
