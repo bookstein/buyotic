@@ -2,7 +2,6 @@ $(document).ready(function() {
 
 
 
-
 	var buyotic = (function () {
 
 
@@ -23,13 +22,22 @@ $(document).ready(function() {
 		//Model
 
 		// Controller
-		var userChoosesPurpose = (function () {
+		var userNavigation = (function () {
 			$("#choose-purpose").on("click.choose", "button", function(event) {
 				event.preventDefault();
 				$("#choose-purpose").css("display", "none");
 				var buttonChoice = $(this).val();
 				displayNextPage(buttonChoice);
 			});
+
+
+			$(".go-back").on("click", function(event) {
+				event.preventDefault();
+				var currentPage = $(this).closest("section").attr("id");
+				$(currentPage).css("display", "none");
+				displayNextPage("#choose-purpose");
+			})
+}
 
 		})();
 
