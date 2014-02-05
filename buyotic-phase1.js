@@ -140,7 +140,13 @@ $(document).ready(function() {
 
 				// data also stored in Buyotic database: user info, request made, store name, meat type
 				//ajax request
-			var req = $.ajax({
+
+			//Control
+
+				// user selects/confirms store
+			$("#retailer-name-submit").on("click", function (event) {
+				event.preventDefault();
+				$.ajax({
 					url: "retailerData.json",
 					dataType: "json",
 					type: "get",
@@ -156,14 +162,6 @@ $(document).ready(function() {
 	        			console.log(thrownError);
 	      			}
 				});
-
-
-
-			//Control
-
-				// user selects/confirms store
-			$("#retailer-name-submit").on("click", function (event) {
-				event.preventDefault();
 			});
 
 				// user sends message
@@ -180,5 +178,3 @@ $(document).ready(function() {
 
 
 	})();
-
-});
