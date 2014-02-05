@@ -164,7 +164,7 @@ $(document).ready(function() {
 				// user selects/confirms store
 			$("#retailer-name-submit").on("click", function (event) {
 				event.preventDefault();
-			};
+			});
 
 				// user sends message
 
