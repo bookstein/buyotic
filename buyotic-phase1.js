@@ -14,8 +14,9 @@ $(document).ready(function() {
 
 		// User chooses use case
 		//View
-		function displayNextPage(pageID) {
-			$(pageID).css("display", "block");
+		function displayNextPage(nextPage, previousPage) {
+			$(previousPage).css("display", "none");
+			$(nextPage).css("display", "block");
 			//location = $(pageID).val();
 		}
 
@@ -23,21 +24,20 @@ $(document).ready(function() {
 
 		// Controller
 		var userNavigation = (function () {
-			$("#choose-purpose").on("click.choose", "button", function(event) {
+			var mainPage = $("#choose-purpose");
+
+			$("#choose-purpose").on("click.next", "button", function(event) {
 				event.preventDefault();
-				$("#choose-purpose").css("display", "none");
 				var buttonChoice = $(this).val();
-				displayNextPage(buttonChoice);
+				displayNextPage(buttonChoice, mainPage);
 			});
 
 
-			$(".go-back").on("click", function(event) {
+			$(".go-back").on("click.back", "button", function(event) {
 				event.preventDefault();
-				var currentPage = $(this).closest("section").attr("id");
-				$(currentPage).css("display", "none");
-				displayNextPage("#choose-purpose");
-			})
-}
+				var currentPage = $(this).parent("section").attr("id");
+				displayNextPage(mainPage, currentPage);
+			});
 
 		})();
 
