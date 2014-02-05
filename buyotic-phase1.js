@@ -15,9 +15,9 @@ $(document).ready(function() {
 
 		// User chooses use case
 		//View
-		function displayNextPage(id) {
-			$(this).css("display", "block");
-			location = $(this).val();
+		function displayNextPage(pageID) {
+			$(pageID).css("display", "block");
+			location = $(pageID).val();
 		}
 
 		//Model
@@ -25,8 +25,8 @@ $(document).ready(function() {
 		// Controller
 		var userChoosesPurpose = (function () {
 			$("#choose-purpose").on("click.choose", "button", function(event) {
-				var btnID = $(this).attr("id");
-				displayNextPage(btnID);
+				var buttonChoice = $(this).val();
+				displayNextPage(buttonChoice);
 			});
 
 		})();
