@@ -175,6 +175,7 @@ $(document).ready(function() {
 			                    emailAddresses.push(data[retailerName].storeContact);
 			                }
 			            });
+			            console.log("Emails sent to:" + emailAddresses);
 						//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
