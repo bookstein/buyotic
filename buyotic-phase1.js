@@ -154,7 +154,7 @@ $(document).ready(function() {
 			//Control
 
 				// user selects/confirms store
-			$("#retailer-name-submit").on("click", function (event) {
+			$("#zip-submit").on("click", function (event) {
 				event.preventDefault();
 				$.ajax({
 					url: "retailerData.json",
@@ -162,10 +162,13 @@ $(document).ready(function() {
 					type: "get",
 					success: function (data) {
 						console.log(data);
-						var retailerName = $("#retailer-name-search").val();
+						var retailerZip = $("#zip-search").val();
+
+						//for zip in ...
+
 						$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact); // insert contact info into "mailto" action attribute
-							// show retailer address in span #retailer-address
-						$("#retailer-address").text(data[retailerName].storeAddress);
+							// show retailer name in span #retailer-name
+						$("#retailer-name").text(data[retailerName].storeName);
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
 	        			console.log(xhr.status);
