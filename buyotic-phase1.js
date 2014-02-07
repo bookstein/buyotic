@@ -161,22 +161,21 @@ $(document).ready(function() {
 					dataType: "json",
 					type: "get",
 					success: function (data) {
-						console.log(data);
+						console.log("All data:" +data);
 						var userEnteredRetailerZip = $("#zip-search").val();
+						var emailAddresses = [];
 
 						// search json file for all objects with matching zip codes
-						$.each(data, function(i, store) {
+						$.each(data, function () {
+			                console.log("MATCHING data");
 			                // search the results using regular expression for the query
-			                if (store.storeZip === userEnteredRetailerZip) {
+			                if (data.storeZip === userEnteredRetailerZip) {
 			                    //append new li with store name
-			                    $("<li class=\"retailer-name\">"+data[retailerName]+"</li>").appendTo("#retailer-results")
-
+			                    $("<li class=\"retailer-name\">"+data[retailerName]+"</li>").appendTo("#retailer-results");
+			                    emailAddresses.push(data[retailerName].storeContact);
 			                }
 			            });
-
-						$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact); // insert contact info into "mailto" action attribute
-							// show retailer name in span #retailer-name
-						$("#retailer-name").text(data[retailerName].storeName);
+						//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
 	        			console.log(xhr.status);
