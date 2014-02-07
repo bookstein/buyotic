@@ -155,12 +155,17 @@
 
         <h3>Send a message: demand antibiotic-free meat!</h3>
           <h4>Where will you send this message?</h4>
-          <input type="text" id="retailer-name-search" class="retailer-name" value="" placeholder="Retailer name"></input>
-          <button type="submit" class="btn btn-primary" id="retailer-name-submit">Search</button>
-          <p><span id="retailer-address"></span></p>
+          <input id="zip-search" type="text" placeholder="e.g. 94608"></input>
+          <button type="submit" class="btn btn-primary" id="zip-submit">Search</button>
+          <p><span class="retailer-name" id="retailer-name"></span></p>
           <br>
           <br>
           <h4>Optional: Choose certified brands or producers that you want to <span class="retailer-name">them</span> to stock:</h4>
+          <!-- <div class="checkbox" id="beef">
+            <label>
+              <input type="checkbox" value="beef"> Beef
+            </label>
+          </div> -->
           <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
           <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
           <br>
@@ -186,7 +191,7 @@
               <br>
               <input id="name-signature" type="text"></input>
               <br>
-              <input id="zip-signature" type="text" placeholder="Optional: zip code"></input>
+
             <br>
             <input type="submit" class="btn btn-primary" id="submit-message" value="Send Message" />
             </form>
