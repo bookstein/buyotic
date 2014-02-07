@@ -162,9 +162,15 @@ $(document).ready(function() {
 					type: "get",
 					success: function (data) {
 						console.log(data);
-						var retailerZip = $("#zip-search").val();
+						var userEnteredRetailerZip = $("#zip-search").val();
 
-						//for zip in ...
+						// search json file for all objects with matching zip codes
+						$.each(data, function(i, store) {
+			                // search the results using regular expression for the query
+			                if (store.storeZip === userEnteredRetailerZip {
+			                    $(".retailer-name-results").text(store.storeName).appendTo();
+			                }
+			            });
 
 						$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact); // insert contact info into "mailto" action attribute
 							// show retailer name in span #retailer-name
