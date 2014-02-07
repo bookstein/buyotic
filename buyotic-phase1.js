@@ -167,8 +167,10 @@ $(document).ready(function() {
 						// search json file for all objects with matching zip codes
 						$.each(data, function(i, store) {
 			                // search the results using regular expression for the query
-			                if (store.storeZip === userEnteredRetailerZip {
-			                    $(".retailer-name-results").text(store.storeName).appendTo();
+			                if (store.storeZip === userEnteredRetailerZip) {
+			                    //append new li with store name
+			                    $("<li class=\"retailer-name\">"+data[retailerName]+"</li>").appendTo("#retailer-results")
+
 			                }
 			            });
 
