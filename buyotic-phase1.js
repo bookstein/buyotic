@@ -145,6 +145,27 @@ $(document).ready(function() {
 
 			//Data
 				// match user entry with store info already in database
+			function getMatchingRetailerData (data) {
+					var userEnteredRetailerZip = $("#zip-search").val();
+					var matchingRetailerNames = [];
+					var emailAddresses = [];
+
+					// search json file for all objects with matching zip codes -- iterative
+
+					$.each(data, function (i, retailer) {
+		                // search the results using regular expression for the query
+		                if (data[i].storeZip == userEnteredRetailerZip) {
+		                    matchingRetailerNames.push(data[i].storeName)
+		                    //append new li with store name
+		                    $("<li>"+data[i].storeName+"</li>").appendTo("#retailer-results");
+		                    emailAddresses.push(data[i].storeContact);
+		                }
+		            });
+		            console.log("Matching retailers:" + matchingRetailerNames)
+		            console.log("Emails sent to:" + emailAddresses);
+					//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
+					return matchingRetailerNames, emailAddresses;
+			};
 
 				// ?? send message to correct email address/twitter handle (POST?)
 
@@ -161,26 +182,7 @@ $(document).ready(function() {
 					dataType: "json",
 					type: "get",
 					success: function (data) {
-						var userEnteredRetailerZip = $("#zip-search").val();
-						var retailerNames = [];
-						var emailAddresses = [];
-
-						for (retailer in data) {
-							retailerNames.push(data[retailer]);
-						}
-
-						// search json file for all objects with matching zip codes
-						$.each(retailerNames, function () {
-			                console.log("MATCHING data");
-			                // search the results using regular expression for the query
-			                if (data[retailer].storeZip == userEnteredRetailerZip) {
-			                    //append new li with store name
-			                    $("<li>"+data[retailerName]+"</li>").appendTo("#retailer-results");
-			                    emailAddresses.push(data[retailerName].storeContact);
-			                }
-			            });
-			            console.log("Emails sent to:" + emailAddresses);
-						//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
+						getMatchingRetailerData(data);
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
 	        			console.log(xhr.status);
