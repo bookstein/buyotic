@@ -161,15 +161,19 @@ $(document).ready(function() {
 					dataType: "json",
 					type: "get",
 					success: function (data) {
-						console.log(data);
 						var userEnteredRetailerZip = $("#zip-search").val();
+						var retailerNames = [];
 						var emailAddresses = [];
 
+						for (retailer in data) {
+							retailerNames.push(data[retailer]);
+						}
+
 						// search json file for all objects with matching zip codes
-						$.each(data.retailer, function () {
+						$.each(retailerNames, function () {
 			                console.log("MATCHING data");
 			                // search the results using regular expression for the query
-			                if (data.retailer.storeZip == userEnteredRetailerZip) {
+			                if (data[retailer].storeZip == userEnteredRetailerZip) {
 			                    //append new li with store name
 			                    $("<li>"+data[retailerName]+"</li>").appendTo("#retailer-results");
 			                    emailAddresses.push(data[retailerName].storeContact);
