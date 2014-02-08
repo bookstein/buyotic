@@ -79,6 +79,7 @@ header h1, h3 {
 #find-meat, #found-meat, #demand-meat {
 	display: none;
 	margin: 20px;
+	height: 100%;
 }
 
 .desktop-meat-choice {
@@ -107,7 +108,7 @@ header h1, h3 {
 }
 
 #message-text {
-	height: 180px;
+	height: auto;
 }
 
 #message-body {

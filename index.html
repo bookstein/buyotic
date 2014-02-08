@@ -157,7 +157,7 @@
         <br>
         <hr>
           <div id="message-body">
-            <h3>"I want to buy antibiotic-free meat!"</h3>
+            <h3>I want to buy antibiotic-free meat!</h3>
             <br>
             <h4>Please stock meat that prevents the spread of antibiotic-resistant super-bugs.</h4>
             <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
@@ -166,8 +166,8 @@
             <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
             <br>
             <br>
-            <form id="message-text" class="form-control" method="post" action="mailto:youremail@youremail.com">
-              <textarea class="form-control" rows="4" id="message-text">
+            <form id="message-text" method="post" action="mailto:youremail@youremail.com">
+              <textarea rows="4" id="message-text" class="form-control">
                 I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
               </textarea>
               <br>
@@ -185,18 +185,19 @@
               <br>
               <label id="signature-label">Signed,</label>
               <br>
+              <br>
               <input id="signature-entry" type="text"></input>
               <br>
               <br>
-              <h4>Where will you send this message?</h4>
-              <p>Enter your zip code here.</p> <input id="zip-search" type="text" placeholder="e.g. 94608"></input>
-            </form>
+            </div>
+            <h4>Where will you send this message?</h4>
+            <p>Enter your zip code here.</p> <input id="zip-search" type="text" placeholder="e.g. 94608"></input>
+          </form>
             <button type="submit" class="btn btn-primary" id="zip-submit">Search</button>
             <ul id="retailer-results">
             </ul>
             <br>
             <br>
-          </div> <!-- end of message-body -->
           <br>
       </section>
 
