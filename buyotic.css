@@ -107,19 +107,20 @@ header h1, h3 {
 }
 
 #message-text {
-	height: 300px;
+	height: 180px;
 }
 
 #message-body {
 	margin: 20px;
 	border: 2px dotted black;
-	background-color: gray;
-	height: auto;
+	padding: 10px;
+	background-color: rgb(215, 244, 252);
+	height: 100%;
 }
 
 .certification {
-	width: 180px;
-	height: 180px;
+	width: 100px;
+	height: 100px;
 }
 
 .brand {
