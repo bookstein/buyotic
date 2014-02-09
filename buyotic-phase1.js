@@ -136,7 +136,7 @@ $(document).ready(function() {
 				// show retailer names in checkboxes
 			function retailerNameCheckbox (storeName) {
 				var storeNameWithoutWhiteSpace = storeName.replace(/ /g,'');
-				$("<li><form><input class=\"check\" type=\"checkbox\" id="+storeNameWithoutWhiteSpace+"><span class=\"retailerName\">" +storeName
+				$("<li><form><input class=\"check\" type=\"checkbox\" id="+storeNameWithoutWhiteSpace+" checked><span class=\"retailerName\">" +storeName
 					+ "</span></form></li>").appendTo("#retailer-results");
 			};
 
