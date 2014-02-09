@@ -135,7 +135,8 @@ $(document).ready(function() {
 			};
 				// show retailer names in checkboxes
 			function retailerNameCheckbox (storeName) {
-				$("<li><form><input class=\"check\" type=\"checkbox\"><span class=\"retailerName\">" + storeName
+				var storeNameWithoutWhiteSpace = storeName.replace(/ /g,'');
+				$("<li><form><input class=\"check\" type=\"checkbox\" id="+storeNameWithoutWhiteSpace+"><span class=\"retailerName\">" +storeName
 					+ "</span></form></li>").appendTo("#retailer-results");
 			};
 
