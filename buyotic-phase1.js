@@ -175,20 +175,23 @@ $(document).ready(function() {
 			//Control
 
 				// user selects/confirms store
-			$("#message-submit").on("click", function (event) {
+			$("#zip-submit").on("focus", function (event) {
 				event.preventDefault();
-				$.ajax({
-					url: "retailerData.json",
-					dataType: "json",
-					type: "get",
-					success: function (data) {
-						getMatchingRetailerData(data);
-					},
-					error: function (xhr, ajaxOptions, thrownError) {
-	        			console.log(xhr.status);
-	        			console.log(thrownError);
-	      			}
-				});
+				var zipCode = $("#zip-submit").val();
+				if (zipCode.length === 5 && typeof zipCode === "number") {
+					$.ajax({
+						url: "retailerData.json",
+						dataType: "json",
+						type: "get",
+						success: function (data) {
+							getMatchingRetailerData(data);
+						},
+						error: function (xhr, ajaxOptions, thrownError) {
+		        			console.log(xhr.status);
+		        			console.log(thrownError);
+		      			}
+					});
+				};
 			});
 
 				// user sends message
