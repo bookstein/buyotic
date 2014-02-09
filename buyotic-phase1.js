@@ -146,7 +146,7 @@ $(document).ready(function() {
 			//Data
 				// match user entry with store info already in database
 			function getMatchingRetailerData (data) {
-					var userEnteredRetailerZip = $("#zip-search").val();
+					var userEnteredRetailerZip = $("#zip-entry").val();
 					var matchingRetailerNames = [];
 					var emailAddresses = [];
 
@@ -175,23 +175,20 @@ $(document).ready(function() {
 			//Control
 
 				// user selects/confirms store
-			$("#zip-submit").on("focus", function (event) {
+			$("#zip-search").on("click", function (event) {
 				event.preventDefault();
-				var zipCode = $("#zip-submit").val();
-				if (zipCode.length >= 5 && typeof zipCode === "number") {
-					$.ajax({
-						url: "retailerData.json",
-						dataType: "json",
-						type: "get",
-						success: function (data) {
-							getMatchingRetailerData(data);
-						},
-						error: function (xhr, ajaxOptions, thrownError) {
-		        			console.log(xhr.status);
-		        			console.log(thrownError);
-		      			}
-					});
-				};
+				$.ajax({
+					url: "retailerData.json",
+					dataType: "json",
+					type: "get",
+					success: function (data) {
+						getMatchingRetailerData(data);
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+	        			console.log(xhr.status);
+	        			console.log(thrownError);
+	      			}
+				});
 			});
 
 				// user sends message
