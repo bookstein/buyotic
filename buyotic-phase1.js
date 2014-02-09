@@ -133,7 +133,10 @@ $(document).ready(function() {
 			function showMessageBody () {
 				$("#message-body").css("display", "block");
 			};
-				//
+				// show retailer names in checkboxes
+			function retailerNameCheckbox (storeName) {
+				$("<li><form><div class=\"checkbox\">" + storeName + "</div></form></li>").appendTo("#retailer-results");
+			};
 
 				//libraries that do dropdown autocomplete - jQuery autocomplete
 
