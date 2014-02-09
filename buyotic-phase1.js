@@ -135,7 +135,8 @@ $(document).ready(function() {
 			};
 				// show retailer names in checkboxes
 			function retailerNameCheckbox (storeName) {
-				$("<li><form><div class=\"checkbox\">" + storeName + "</div></form></li>").appendTo("#retailer-results");
+				$("<li><form><input class=\"check\" type=\"checkbox\"><span class=\"retailerName\">" + storeName
+					+ "</span></form></li>").appendTo("#retailer-results");
 			};
 
 				//libraries that do dropdown autocomplete - jQuery autocomplete
