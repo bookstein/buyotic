@@ -203,7 +203,10 @@ $(document).ready(function() {
 
 
 				// user sends message
+			$("#message-submit").on("click", function (event) {
+				event.preventDefault();
 
+			})
 
 
 
