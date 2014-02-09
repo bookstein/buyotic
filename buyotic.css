@@ -107,16 +107,17 @@ header h1, h3 {
 	font-size: 1.2em;
 }
 
-#message-text {
-	height: auto;
-}
-
 #message-body {
+	display: none;
 	margin: 20px;
 	border: 2px dotted black;
 	padding: 10px;
 	background-color: rgb(215, 244, 252);
 	height: 100%;
+}
+
+#message-text {
+	height: auto;
 }
 
 .certification {

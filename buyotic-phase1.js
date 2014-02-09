@@ -129,9 +129,11 @@ $(document).ready(function() {
 		var demandMeat = (function() {
 
 			//View
-				//dropdown: an unordered list of stores whose names are in the database!
-
-				//filtered by user input (text)
+				// what user will see after inputting zip and searching for retailers
+			function showMessageBody () {
+				$("#message-body").css("display", "block");
+			};
+				//
 
 				//libraries that do dropdown autocomplete - jQuery autocomplete
 
@@ -174,7 +176,7 @@ $(document).ready(function() {
 
 			//Control
 
-				// user selects/confirms store
+			// user selects/confirms store
 			$("#zip-search").on("click", function (event) {
 				event.preventDefault();
 				$.ajax({
@@ -183,6 +185,7 @@ $(document).ready(function() {
 					type: "get",
 					success: function (data) {
 						getMatchingRetailerData(data);
+						showMessageBody();
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
 	        			console.log(xhr.status);
@@ -190,6 +193,7 @@ $(document).ready(function() {
 	      			}
 				});
 			});
+
 
 				// user sends message
 
