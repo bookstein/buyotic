@@ -206,31 +206,19 @@ $(document).ready(function() {
 			$("#message-submit").on("click", function (event) {
 				event.preventDefault();
 				var buttons = {
-					"share-facebook": {
-						className:"btn-success",
+					"Facebook": {
+						className:"btn-fb",
 						callback: function () {
-						  (function(d, s, id) {
-					          var js, fjs = d.getElementsByTagName(s)[0];
-					          if (d.getElementById(id)) return;
-					          js = d.createElement(s); js.id = id;
-					          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-					          fjs.parentNode.insertBefore(js, fjs);
-				        	}(document, 'script', 'facebook-jssdk'));
+
 						}
 					},
-					"share-twitter": {
-						className:"btn-success",
+					"Twitter": {
+						className:"btn-twitter",
 						callback: function () {
-							 !function(d,s,id){
-							 	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)
-							 	?'http':'https';if(!d.getElementById(id)){
-							 		js=d.createElement(s);
-						 			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-						 			fjs.parentNode.insertBefore(js,fjs);}
-						 	}(document, 'script', 'twitter-wjs');
+
 						}
 					},
-					"no further action": {
+					"I'm done": {
 						className: "btn-default",
 						callback: function () {
 							bootbox.dialog({
@@ -244,8 +232,6 @@ $(document).ready(function() {
 						}
 					}
 				}; // end of buttons object
-
-
 
 				bootbox.dialog({
 					message: "Your message has been sent!",
