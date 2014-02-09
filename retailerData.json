@@ -3,15 +3,18 @@
 		{"storeName": "Whole Foods",
 		"storeAddress": "301 Emeryville",
 		"storeZip": "94608",
-		"storeContact": "contact@wholefoods.com"},
+		"storeContact": "contact@wholefoods.com",
+		"twitter": "@WholeFoods"},
 	"Trader Joe's":
 		{"storeName": "Trader Joe's",
 		"storeAddress": "900 University Ave",
 		"storeZip": "94608",
-		"storeContact": "contact@traderjoes.com"},
+		"storeContact": "contact@traderjoes.com",
+		"twitter": ""},
 	"Kroger's":
 		{"storeName": "Kroger's",
 		"storeAddress": "400 Lexington Ave",
 		"storeZip": "94608",
-		"storeContact": "contact@krogers.com"}
+		"storeContact": "contact@krogers.com",
+		"twitter": "@kroger"}
 }
