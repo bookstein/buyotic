@@ -156,47 +156,47 @@
         <h3>Send a message to grocery stores near you!</h3>
         <br>
         <hr>
-          <div id="message-body">
-            <h4>Your message will be sent to:</h4>
-            <p>Enter your zip code here.</p>
-            <input id="zip-entry" type="text" placeholder="e.g. 94608"></input>
-            <button type="submit" class="btn btn-primary" id="zip-search">Search for Stores</button>
-            <ul id="retailer-results">
-            </ul>
+        <h4>Choose where to send your message:</h4>
+        <p>Enter your zip code here.</p>
+        <input id="zip-entry" type="text" placeholder="e.g. 94608"></input>
+        <button type="submit" class="btn btn-primary" id="zip-search">Search for Stores</button>
+        <ul id="retailer-results">
+        </ul>
+        <br>
+        <div id="message-body">
+          <h3>I want to buy antibiotic-free meat!</h3>
+          <br>
+          <h4>Please stock meat that prevents the spread of antibiotic-resistant super-bugs.</h4>
+          <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
+          <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
+          <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
+          <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
+          <br>
+          <br>
+          <form id="message-text" method="post" action="mailto:youremail@youremail.com">
+            <textarea rows="4" id="message-text" class="form-control">
+              I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
+            </textarea>
             <br>
-            <h3>I want to buy antibiotic-free meat!</h3>
+            <!-- <h4>Optional: Choose certified brands or producers that you want to support:</h4>
             <br>
-            <h4>Please stock meat that prevents the spread of antibiotic-resistant super-bugs.</h4>
-            <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
-            <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
-            <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
-            <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
-            <br>
-            <br>
-            <form id="message-text" method="post" action="mailto:youremail@youremail.com">
-              <textarea rows="4" id="message-text" class="form-control">
-                I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
-              </textarea>
-              <br>
-              <!-- <h4>Optional: Choose certified brands or producers that you want to support:</h4>
-              <br>
-              <div class="checkbox" id="beef">
-                <label>
-                  <input type="checkbox" value="beef"> Beef
-                </label>
-              </div>
-              <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
-              <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
-              <br>-->
-              <br>
-              <label id="signature-label">Signed,</label>
-              <br>
-              <input id="signature-entry" type="text"></input>
-              <br>
-              <br>
+            <div class="checkbox" id="beef">
+              <label>
+                <input type="checkbox" value="beef"> Beef
+              </label>
             </div>
-          </form>
-          <button type="submit" class="btn btn-primary" id="message-submit">Send Message!</button>
+            <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
+            <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
+            <br>-->
+            <br>
+            <label id="signature-label">Signed,</label>
+            <br>
+            <input id="signature-entry" type="text"></input>
+            <br>
+            <br>
+            </form>
+        </div>
+        <button type="submit" class="btn btn-primary" id="message-submit">Send Message!</button>
       </section>
 
 
