@@ -175,7 +175,7 @@ $(document).ready(function() {
 			//Control
 
 				// user selects/confirms store
-			$("#zip-submit").on("click", function (event) {
+			$("#message-submit").on("click", function (event) {
 				event.preventDefault();
 				$.ajax({
 					url: "retailerData.json",
