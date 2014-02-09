@@ -205,44 +205,58 @@ $(document).ready(function() {
 				// user sends message
 			$("#message-submit").on("click", function (event) {
 				event.preventDefault();
-				location = "http://www.buyotic.org",
+				var buttons = {
+					"share-facebook": {
+						className:"btn-success",
+						callback: function () {
+						  (function(d, s, id) {
+					          var js, fjs = d.getElementsByTagName(s)[0];
+					          if (d.getElementById(id)) return;
+					          js = d.createElement(s); js.id = id;
+					          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+					          fjs.parentNode.insertBefore(js, fjs);
+				        	}(document, 'script', 'facebook-jssdk'));
+						}
+					},
+					"share-twitter": {
+						className:"btn-success",
+						callback: function () {
+							 !function(d,s,id){
+							 	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)
+							 	?'http':'https';if(!d.getElementById(id)){
+							 		js=d.createElement(s);
+						 			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+						 			fjs.parentNode.insertBefore(js,fjs);}
+						 	}(document, 'script', 'twitter-wjs');
+						}
+					},
+					"no further action": {
+						className: "btn-default",
+						callback: function () {
+							bootbox.dialog({
+								message: "Good luck in your hunt for good meat!",
+								title: "Thank you!",
+								show: true,
+								closeButton: true,
+								animate: false,
+								className: "success-dialog",
+							});
+						}
+					}
+				}; // end of buttons object
+
+
+
 				bootbox.dialog({
 					message: "Your message has been sent!",
 					title: "Success",
 					show: true,
-					closeButton: true,
+					closeButton: false,
 					animate: false,
 					className: "success-dialog",
-					buttons: {
-						"share-facebook": {
-							className:"btn-success",
-							callback: function () {
-							  (function(d, s, id) {
-						          var js, fjs = d.getElementsByTagName(s)[0];
-						          if (d.getElementById(id)) return;
-						          js = d.createElement(s); js.id = id;
-						          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-						          fjs.parentNode.insertBefore(js, fjs);
-					        	}(document, 'script', 'facebook-jssdk'));
-							};
-						},
-						"share-twitter": {
-							className:"btn-success",
-							callback: function () {
-								 !function(d,s,id){
-								 	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)
-								 	?'http':'https';if(!d.getElementById(id)){
-								 		js=d.createElement(s);
-							 			js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-							 			fjs.parentNode.insertBefore(js,fjs);}
-							 	}(document, 'script', 'twitter-wjs');
-							};
-						}
-					}
-				});
-			})
-
-
+					buttons: buttons
+				}); // end of bootbox dialog
+			});
 
 		})();
 
