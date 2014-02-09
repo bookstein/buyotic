@@ -178,7 +178,7 @@ $(document).ready(function() {
 			$("#zip-submit").on("focus", function (event) {
 				event.preventDefault();
 				var zipCode = $("#zip-submit").val();
-				if (zipCode.length === 5 && typeof zipCode === "number") {
+				if (zipCode.length >= 5 && typeof zipCode === "number") {
 					$.ajax({
 						url: "retailerData.json",
 						dataType: "json",
