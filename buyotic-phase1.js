@@ -158,11 +158,13 @@ $(document).ready(function() {
 					// search json file for all objects with matching zip codes -- iterative
 
 					$.each(data, function (i, retailer) {
+		                var storeName = data[i].storeName;
 		                // search the results using regular expression for the query
 		                if (data[i].storeZip == userEnteredRetailerZip) {
-		                    matchingRetailerNames.push(data[i].storeName)
+		                    matchingRetailerNames.push(storeName);
 		                    //append new li with store name
-		                    $("<li>"+data[i].storeName+"</li>").appendTo("#retailer-results");
+		                    retailerNameCheckbox(storeName);
+		                    //$("<li>"+data[i].storeName+"</li>").appendTo("#retailer-results");
 		                    emailAddresses.push(data[i].storeContact);
 		                }
 		            });
