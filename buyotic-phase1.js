@@ -26,11 +26,11 @@ $(document).ready(function() {
 		var userNavigation = (function () {
 			var mainPage = $("#choose-purpose");
 
-			$("#choose-purpose").on("click.next", "button", function(event) {
+			/*$("#choose-purpose").on("click.next", "button", function(event) {
 				event.preventDefault();
 				var buttonChoice = $(this).val();
 				displayNextPage(buttonChoice, mainPage);
-			});
+			});*/
 
 
 			$(".go-back").on("click.back", "button", function(event) {
