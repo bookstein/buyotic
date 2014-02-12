@@ -5,6 +5,12 @@ var myGoogleMapAPI = (function() {
 
   function initializeMap() {
     geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(42.095287, -79.3185139); //????
+    var mapOptions = {
+      zoom: 8,
+      center: latlng,
+      //mapTypeId:
+    };
 
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   };
