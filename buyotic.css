@@ -47,6 +47,16 @@ table {
 	border-spacing: 0;
 }
 
+html {
+	height: 100%;
+}
+
+body {
+   height: 100%;
+   margin: 0;
+   padding: 0
+};
+
 header {
 	background-color: green;
 }
@@ -100,6 +110,11 @@ header h1, h3 {
 
 
 /* DEMAND MEAT */
+
+#map-canvas {
+	height: 100%;
+}
+
 
 #retailer-name {
 	width: 200px;
