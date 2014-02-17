@@ -13,10 +13,6 @@
     </header>
 
     <div class="container">
-
-
-
-
       <section id="choose-purpose" class="centered">
         <div class="right-column">
           <h3>Looking for antibiotic-free meat near you?</h3>
@@ -25,11 +21,12 @@
           </button>
         </div>
 
-        <div class="middle-column">
+        <!-- <div class="middle-column">
           <h3>Found a good place to get antibiotic-free meat?</h3>
           <br>
           <button id="found" value="#found-meat" class="btn btn-primary">Share Resource</button>
         </div>
+        -->
 
         <div class="left-column">
           <h3>Can't find antibiotic-free meat at a store near you?</h3>
@@ -37,85 +34,46 @@
           <a href="demand.html"><button id="demand" value="#demand-meat" class="btn btn-primary">Demand Meat
           </button></a>
         </div>
-
+      </section>
+      <section id="home-about">
         <br>
         <hr>
         <br>
-
+        <h2>Welcome to Buyotic</h2>
+        <p class="lead">
+          Without giving anything up, you and one million moms can protect your kids from drug-resistant superbugs.
+        </p>
+        <p>
+          The future of meat is at a tipping point... and we’re starting with chicken. Poultry farmers already know they don't need to feed antibiotics to healthy chickens -- endangering American families by creating drug-resistant superbugs. Who will prove to them that we don’t need to play chicken with our children's health?
+        </p>
+        <p>
+          We will.
+        </p>
+        <hr>
+        <br>
+        <h3>
+          Here's what YOU can do:
+        </h3>
+        <ol>
+          <li>Buy affordable, responsibly-raised certified chicken at a grocery store near you. <a href="find.html">We’ll help you find it.</a></li>
+          <li>Did you find delicious chicken at a great price? Share with friends who care and reward the farmers that are doing it right!</li>
+          <li>Your grocery store doesn’t carry antibiotic-free chicken? Send a message to the management and <a href="demand.html">add your voice to a million-mom collective tweet.</a></li>
+        </ol>
+        <br>
+        <hr>
+        <h3>
+          Here’s what WE can do:
+        </h3>
+        <p class="lead">
+          Buycott the good guys -- and make everyone want to get on board.
+        </p>
+        <p>
+          With our voices combined, we will convince grocery stores to stock healthy meats and reward responsible farmers. By acting together, we will make healthy, drug-free chicken available to everyone.
+        </p>
+        <hr>
+        <br>
         <a href="www.buyotic.org">Continue to Buyotic >> </a>
       </section>
-
-
-
-
-
-
-
-
-      <section id="found-meat">
-      </section>
-
-
-
-      <section id="demand-meat">
-
-        <button class="go-back btn btn-sm">Go back</button>
-        <br>
-        <br>
-
-        <h3>Send a message to grocery stores near you!</h3>
-        <br>
-        <hr>
-        <h4>Choose where to send your message:</h4>
-        <label>Enter zip code
-          <input id="zip-entry" type="text" placeholder="e.g. 94608">
-        </label>
-        <button type="submit" class="btn btn-primary" id="zip-search">Search for Stores Nearby</button>
-        <ul id="retailer-results">
-        </ul>
-        <br>
-        <div id="message-body">
-          <h3>I want to buy antibiotic-free meat!</h3>
-          <br>
-          <h4>Please stock meat that prevents the spread of antibiotic-resistant super-bugs.</h4>
-          <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
-          <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
-          <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
-          <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
-          <br>
-          <br>
-          <form id="message-text" method="post" action="mailto:youremail@youremail.com">
-            <textarea rows="4" id="message-text" class="form-control">
-              I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
-            </textarea>
-            <br>
-            <!-- <h4>Optional: Choose certified brands or producers that you want to support:</h4>
-            <br>
-            <div class="checkbox" id="beef">
-              <label>
-                <input type="checkbox" value="beef"> Beef
-              </label>
-            </div>
-            <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
-            <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
-            <br>-->
-            <br>
-            <label id="signature-label">Signed,</label>
-            <br>
-            <input id="signature-entry" type="text"></input>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary" id="message-submit">Send Message!</button>
-          </form>
-        </div>
-        <div id="fb-root"></div>
-      </section>
-
-
-
-
-
-
     </div><!-- end of container -->
     <!-- scripts -->
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
