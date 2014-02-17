@@ -1,3 +1,4 @@
+/*SASS file*/
 
 body {
    height: 100%;
@@ -5,93 +6,32 @@ body {
    padding: 0
 }
 
+
 header {
 	background-color: green;
+	h1, h3 {
+		display: inline-block;
+		text-align: center;
+		color: white;
+	}
+	#logo {
+		height: 100px;
+		width: 129px;
+	}
 }
 
-header h1, h3 {
-	display: inline-block;
-	text-align: center;
-	color: white;
-}
+section {
+	.centered {
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+	}
 
-
-#logo {
-	height: 100px;
-	width: 129px;
-}
-
-/* CHOOSE PURPOSE */
-
-#choose-purpose {
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.right-column, .middle-column, .left-column {
-	display: inline-block;
-	margin: 0 15px 0 15px;
-	width: 300px;
-}
-
-#find-meat, #found-meat {
-	display: none;
-	margin: 20px;
-	height: 100%;
-}
-
-.desktop-meat-choice {
-	display: block;
-}
-
-.mobile-meat-choice {
-	display: none;
-}
-
-/* FIND MEAT */
-
-.checkbox {
-	margin-right: 10px;
-}
-
-/* FOUND MEAT */
-
-
-/* DEMAND MEAT */
-
-#map-canvas {
-	height: 100%;
-}
-
-
-#retailer-name {
-	width: 200px;
-	line-height: 2em;
-	font-size: 1.2em;
-}
-
-#message-body {
-	display: none;
-	margin: 20px;
-	border: 2px dotted black;
-	padding: 10px;
-	background-color: rgb(215, 244, 252);
-	height: 100%;
-}
-
-#message-text {
-	height: auto;
-}
-
-.certification {
-	width: 100px;
-	height: 100px;
-}
-
-.brand {
-	width: auto;
-	height: auto;
+	.right-column, .middle-column, .left-column {
+		display: inline-block;
+		margin: 0 15px 0 15px;
+		width: 300px;
+	}
 }
 
 .btn-fb {
