@@ -65,7 +65,7 @@ function googleMapsLoaded() {
     });
 
     // make request to Places Service
-    var placesService = new google.maps.places.PlacesService(map); // bug: map is not defined here
+    var placesService = new google.maps.places.PlacesService(map);
 
     // pass in request and callback, send search request
     placesService.textSearch(textSearchRequest, textSearchCallback);
@@ -76,6 +76,8 @@ function googleMapsLoaded() {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       //add markers
       createMarkers(results);
+      //add pagination
+
     }
 
     //on error
@@ -88,13 +90,7 @@ function googleMapsLoaded() {
     var bounds = new google.maps.LatLngBounds();
 
     for (var i = 0, place; place = places[i]; i++) {
-      var image = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+      var image = "images/buyotic-logo-sm.png";
 
       var marker = new google.maps.Marker({
         map: map,
