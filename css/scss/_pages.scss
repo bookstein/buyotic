@@ -7,9 +7,10 @@
 
 /* DEMAND MEAT */
 #map-canvas {
-	display: none;
+	display: block;
 	border: 2px solid #000;
-	height: 100%;
+	padding: 3px;
+	height: 300px;
 }
 
 #retailer-name {
