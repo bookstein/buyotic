@@ -61,7 +61,7 @@ function googleMapsLoaded() {
     // new map
     map = new google.maps.Map(document.getElementById("map-canvas"), {
       center: latlng,
-      zoom: 15
+      zoom: 16 // zoom level isn't working
     });
 
     // make request to Places Service
