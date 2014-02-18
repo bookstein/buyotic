@@ -1,6 +1,6 @@
 function googleMapsLoaded() {
 
-  var map, retailerNameResults, infoWindow;
+  var map, retailerNameResults, infowindow;
 
   // event handler: on click, geocode
   function searchUserInformationOnClick () {
@@ -114,16 +114,12 @@ function googleMapsLoaded() {
     var info = "<div id='window-content'><h3>" + name + "</h3><br><h5>" + vicinity + "</h5></div>";
 
 
-    infoWindow = new google.maps.InfoWindow({
+    infowindow = new google.maps.InfoWindow({
       content: info
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map,marker);
-    }
-
-        google.maps.event.addListener(marker, 'mouseover', function() {
-        infowindow.open(map, this);
+    google.maps.event.addListener(marker, 'mouseover', function() {
+      infowindow.open(map, this);
     });
 
     // assuming you also want to hide the infowindow when user mouses-out
