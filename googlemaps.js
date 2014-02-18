@@ -53,6 +53,7 @@ function googleMapsLoaded() {
     // create text request object
     var textSearchRequest = {
       query: "grocery stores",
+      types: ['store', 'establishment'],
       location: latlng,
       radius: 16000 // 16,000 meters, or almost 10 miles
     }
@@ -106,6 +107,8 @@ function googleMapsLoaded() {
 
       bounds.extend(place.geometry.location);
     }
+
+    map.fitBounds(bounds);
   }
 
 
