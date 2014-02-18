@@ -1,5 +1,7 @@
 function googleMapsLoaded() {
 
+  var map;
+
   // event handler: on click, geocode
   function searchUserInformationOnClick () {
     var zipcode = $("#zip-entry").val();
@@ -20,7 +22,7 @@ function googleMapsLoaded() {
         address: location
     };
 
-    // creates new Geocoder service object
+    // initiates new Geocoder service object
     var geocodingService = new google.maps.Geocoder();
 
     // sends geocode request (object, callback)
@@ -37,7 +39,7 @@ function googleMapsLoaded() {
       console.log(latlng);
 
       //run text search request
-      sendTextSearchRequest(latlng);
+      initializeWithTextSearchRequest(latlng);
     }
 
     // error
@@ -48,13 +50,19 @@ function googleMapsLoaded() {
 
   }
 
-  function sendTextSearchRequest (latlng) {
+  function initializeWithTextSearchRequest (location) {
     // create text request object
     var textSearchRequest = {
       query: "grocery stores",
-      location: latlng,
-      radius: 16000 // 16,000 meters is almost 10 miles
+      location: location,
+      radius: 16000 // 16,000 meters, or almost 10 miles
     }
+
+    // new map
+    map = new google.maps.Map(document.getElementById("map-canvas"), {
+      center: latlng,
+      zoom: 15
+    });
 
     // make request to Places Service
     var placesService = new google.maps.places.PlacesService(map); // bug: map is not defined here
@@ -63,23 +71,17 @@ function googleMapsLoaded() {
     placesService.textSearch(textSearchRequest, textSearchCallback);
   }
 
-  function textSearchCallback () {
+  function textSearchCallback (results, status) {
     //on success
-      //call initializeMap
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      //add markers
+
+    }
 
     //on error
-      // error
-  }
-
-  function initializeMap (latlng) {
-    // map options
-     var mapOptions = {
-        zoom: 10,
-        center: latlng,
-      };
-
-    // new map
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    else {
+      alert("We're sorry, your search request failed: " + status)
+    }
   }
 
 
