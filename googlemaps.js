@@ -36,7 +36,6 @@ function googleMapsLoaded() {
       // remove loading text
     if (status == google.maps.GeocoderStatus.OK) {
       var latlng = results[0].geometry.location;
-      console.log(latlng);
 
       //run text search request
       initializeWithTextSearchRequest(latlng);
@@ -45,16 +44,16 @@ function googleMapsLoaded() {
     // error
       // show error message
     else {
-      alert("We're sorry, we couldn't process your address: " + status);
+      alert("We're sorry, there was an error: " + status);
     }
 
   }
 
-  function initializeWithTextSearchRequest (location) {
+  function initializeWithTextSearchRequest (latlng) {
     // create text request object
     var textSearchRequest = {
       query: "grocery stores",
-      location: location,
+      location: latlng,
       radius: 16000 // 16,000 meters, or almost 10 miles
     }
 
@@ -83,7 +82,7 @@ function googleMapsLoaded() {
 
     //on error
     else {
-      alert("We're sorry, your search request failed: " + status)
+      alert("We're sorry, there was an error: " + status)
     }
   }
 
