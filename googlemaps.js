@@ -1,16 +1,20 @@
 function googleMapsLoaded() {
   // event handler: on click, geocode
-  function searchZipCodeOnClick () {
+  function searchUserInformationOnClick () {
     var zipcode = $("#zip-entry").val();
+    var userLocationAndPreferencesObj = {
+      city: "",
+      zipcode: zipcode
+    }
     // show "loading"
     // geocode input zipcode
-    sendGeocodeRequest(zipcode);
+    sendGeocodeRequest(userLocationAndPreferencesObj.zipcode);
   }
 
-  function sendGeocodeRequest (zipcode) {
+  function sendGeocodeRequest (location) {
     //geocode request object literal + callback
     var geocodeRequest = {
-        address: zipcode
+        address: location
     };
 
     // creates new Geocoder service object
