@@ -75,7 +75,7 @@ function googleMapsLoaded() {
 
 
   function initialize() {
-    $("#zip-search").on("click", searchZipCodeOnClick);
+    $("#zip-search").on("click", searchUserInformationOnClick);
   }
 
   initialize();
