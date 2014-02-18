@@ -1,0 +1,15 @@
+.map-container {
+
+	display: none;
+	background: transparent url(images/ajax-loading.gif) no-repeat center center;
+
+	#map-canvas {
+		border: 2px solid #000;
+		padding: 3px;
+		height: 300px;
+	}
+
+}
+
+
+

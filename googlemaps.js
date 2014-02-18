@@ -72,7 +72,7 @@ function googleMapsLoaded() {
       };
 
     // new map
-    $("#map-canvas").css("display", "block");
+    $(".map-container").css("display", "block");
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   }
 
