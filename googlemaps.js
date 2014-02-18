@@ -1,5 +1,3 @@
-var myGoogleMapAPI = (function() {
-
   var geocoder;
   var map;
 
@@ -12,7 +10,6 @@ var myGoogleMapAPI = (function() {
       //mapTypeId:
     };
 
-    $("#map-canvas").css("display", "block");
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   };
 
@@ -50,5 +47,3 @@ var myGoogleMapAPI = (function() {
   };
 
   window.onload = loadScript;
-
-})();
