@@ -1,9 +1,58 @@
+$(document).ready(function () {
+
+
+// event handler: on click, geocode
+  function searchZipCodeOnClick () {
+    // show "loading"
+    // geocode input zipcode
+  }
+
+
+// event handler: on click, geocode
+  function searchZipCodeOnClick () {
+    // show "loading"
+    // geocode input zipcode
+  }
+
+  function sendGeocodeRequest () {
+    //geocode request object literal + callback
+    // sends geocode request with object + callback
+  }
+
+  function geocodeCallback () {
+    //success
+      //return zipcode as latlng
+      //initialize map
+      // remove loading text
+    // error
+      // show error message
+  }
+
+  function initializeMap (latlng) {
+    // unpack zip code into latlong
+    // map options
+    // new map
+  }
+
+
+  function initialize() {
+    $("#zip-search").on("click", searchZipCodeOnClick);
+  }
+
+
+
+});
+
+
+
+
+
   var geocoder;
   var map;
 
   function initializeMap() {
-    //geocoder = new google.maps.Geocoder();
-    //var latlng = new google.maps.LatLng(42.095287, -79.3185139); //????
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(42.095287, -79.3185139); //????
     var mapOptions = {
       zoom: 8,
       center: //latlng,
@@ -37,7 +86,7 @@
       });
 
       geocoder.geocode(geocodeRequest, resultsCallback);
-  });
+  })();
 
   // adds <script> to HTML only after page has loaded, uses callback to call initialize()
   function loadScript() {
