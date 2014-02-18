@@ -57,17 +57,18 @@ function googleMapsLoaded() {
     }
 
     // make request to Places Service
-    var service = new google.maps.places.PlacesService(map);
+    var placesService = new google.maps.places.PlacesService(map); // bug: map is not defined here
 
     // pass in request and callback, send search request
-    service.textSearch(textSearchRequest, textSearchCallback);
+    placesService.textSearch(textSearchRequest, textSearchCallback);
   }
 
   function textSearchCallback () {
     //on success
-
+      //call initializeMap
 
     //on error
+      // error
   }
 
   function initializeMap (latlng) {
