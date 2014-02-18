@@ -12,6 +12,7 @@ var myGoogleMapAPI = (function() {
       //mapTypeId:
     };
 
+    $("#map-canvas").css("display", "block");
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   };
 
