@@ -109,8 +109,9 @@ section .right-column, section .middle-column, section .left-column {
   background: transparent url(../images/ajax-loader.gif) no-repeat center center;
   height: 300px;
   width: 70%; }
-  .map-container#map-canvas {
+  .map-container #map-canvas {
     border: 2px solid #000;
     padding: 3px;
     height: inherit;
-    width: inherit; }
+    width: inherit;
+    display: block; }
