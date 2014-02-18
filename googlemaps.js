@@ -1,6 +1,6 @@
 function googleMapsLoaded() {
 
-  var map;
+  var map, retailerNameResults;
 
   // event handler: on click, geocode
   function searchUserInformationOnClick () {
@@ -103,7 +103,7 @@ function googleMapsLoaded() {
         position: place.geometry.location
       });
 
-      placesList.innerHTML += '<li>' + place.name + '</li>';
+      //retailerNameResults.innerHTML += '<li>' + place.name + '</li>'; <-- this will target nameresults ul
 
       bounds.extend(place.geometry.location);
     }
