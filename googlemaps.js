@@ -2,25 +2,27 @@
   var map;
 
   function initializeMap() {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(42.095287, -79.3185139); //????
+    //geocoder = new google.maps.Geocoder();
+    //var latlng = new google.maps.LatLng(42.095287, -79.3185139); //????
     var mapOptions = {
       zoom: 8,
-      center: latlng,
+      center: //latlng,
       //mapTypeId:
     };
 
+    $("#map-canvas").css("display", "block");
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   };
 
 
-  function geocodeAddress() {
-      var address = $("#zip").val(); // use zip value from user input!!!
-      var geocodeRequest = {
-        address: address
+  var geocodeAddress = (function () {
+      var address = $("#zip-entry").val(); // use zip value from user input!!!
+      var GeocodeRequest = {
+        address: address,
+        callback: resultsCallback();
       };
 
-      var resultsCallback = (function (results, status) {
+      function resultsCallback (results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
@@ -32,10 +34,10 @@
           else {
             alert("We're sorry, we couldn't process your address: " + status);
           }
-        });
+      });
 
       geocoder.geocode(geocodeRequest, resultsCallback);
-  };
+  });
 
   // adds <script> to HTML only after page has loaded, uses callback to call initialize()
   function loadScript() {
@@ -46,4 +48,4 @@
     document.body.appendChild(script);
   };
 
-  window.onload = loadScript;
+  $("#zip-search").on("click", loadScript);
