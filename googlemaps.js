@@ -32,29 +32,35 @@ function googleMapsLoaded() {
       //return zipcode as latlng
       //pass info to text search request
       // remove loading text
-    // error
-      // show error message
-
     if (status == google.maps.GeocoderStatus.OK) {
       var latlng = results[0].geometry.location;
-      //initializeMap(latlng);
+      console.log(latlng);
+
       //run text search request
+      sendTextSearchRequest(latlng);
     }
 
+    // error
+      // show error message
     else {
       alert("We're sorry, we couldn't process your address: " + status);
     }
 
   }
 
-  function sendTextSearchRequest () {
+  function sendTextSearchRequest (latlng) {
     // create text request object
+    var textSearchRequest = {
+      query: "grocery stores",
+      location: latlng,
+      radius: 16000 // 16,000 meters is almost 10 miles
+    }
 
     // make request to Places Service
-    //service = new google.maps.places.PlacesService(map);
+    var service = new google.maps.places.PlacesService(map);
 
     // pass in request and callback, send search request
-    //service.textSearch(request, callback);
+    service.textSearch(textSearchRequest, textSearchCallback);
   }
 
   function textSearchCallback () {
