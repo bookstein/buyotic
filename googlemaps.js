@@ -23,14 +23,15 @@ function googleMapsLoaded() {
   function geocodeCallback (results, status) {
     //success
       //return zipcode as latlng
-      //initialize map
+      //pass info to text search request
       // remove loading text
     // error
       // show error message
 
     if (status == google.maps.GeocoderStatus.OK) {
       var latlng = results[0].geometry.location;
-      initializeMap(latlng);
+      //initializeMap(latlng);
+      //run text search request
     }
 
     else {
