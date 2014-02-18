@@ -1,4 +1,5 @@
 function googleMapsLoaded() {
+
   // event handler: on click, geocode
   function searchUserInformationOnClick () {
     var zipcode = $("#zip-entry").val();
@@ -7,8 +8,10 @@ function googleMapsLoaded() {
       zipcode: zipcode
     }
     // show "loading"
+
     // geocode input zipcode
     sendGeocodeRequest(userLocationAndPreferencesObj.zipcode);
+    console.log(userLocationAndPreferencesObj.zipcode);
   }
 
   function sendGeocodeRequest (location) {
