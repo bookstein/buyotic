@@ -8,7 +8,7 @@ function googleMapsLoaded() {
       zipcode: zipcode
     }
     // show "loading"
-
+    $(".map-container").css("display", "block");
     // geocode input zipcode
     sendGeocodeRequest(userLocationAndPreferencesObj.zipcode);
     console.log(userLocationAndPreferencesObj.zipcode);
@@ -72,7 +72,6 @@ function googleMapsLoaded() {
       };
 
     // new map
-    $(".map-container").css("display", "block");
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   }
 
