@@ -39,6 +39,23 @@ function googleMapsLoaded() {
 
   }
 
+  function sendTextSearchRequest () {
+    // create text request object
+
+    // make request to Places Service
+    //service = new google.maps.places.PlacesService(map);
+
+    // pass in request and callback, send search request
+    //service.textSearch(request, callback);
+  }
+
+  function textSearchCallback () {
+    //on success
+
+
+    //on error
+  }
+
   function initializeMap (latlng) {
     // map options
      var mapOptions = {
