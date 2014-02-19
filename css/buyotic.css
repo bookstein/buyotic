@@ -55,7 +55,7 @@ body {
 
 header {
   background-color: #94c514; }
-  header h1, header h3 {
+  header h3 {
     display: inline-block;
     text-align: center;
     color: white; }
