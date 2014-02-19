@@ -74,10 +74,11 @@ function googleMapsLoaded() {
   function textSearchCallback (results, status, pagination) {
     //on success
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(results);
       //add markers
       createMarkers(results);
       // create infowindow
-      createInfoWindow(results);
+        // createInfoWindow(results);
       //add pagination
 
     }
@@ -109,13 +110,16 @@ function googleMapsLoaded() {
     map.fitBounds(bounds);
   }
 
+  /*
+  // SEE http://duncan99.wordpress.com/2011/10/08/google-maps-api-infowindows/ for help!
   function createInfoWindow (places) {
 
-    var info = "<div id='window-content'><h3>" + name + "</h3><br><h5>" + vicinity + "</h5></div>";
+    var info = "<div id='window-content'><h3>" + results.name + "</h3><br><h5>" + results.vicinity + "</h5></div>";
 
 
     infowindow = new google.maps.InfoWindow({
-      content: info
+      content: info,
+      map: map
     });
 
     google.maps.event.addListener(marker, 'mouseover', function() {
@@ -127,7 +131,7 @@ function googleMapsLoaded() {
         infowindow.close();
     });
   }
-
+*/
 
   function initialize() {
     $("#zip-search").on("click", searchUserInformationOnClick);
