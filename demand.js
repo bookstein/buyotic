@@ -12,11 +12,11 @@ $(document).ready(function() {
 				$("#message-body").css("display", "block");
 			};
 				// show retailer names in checkboxes
-			function retailerNameCheckbox (storeName) {
-				var storeNameWithoutWhiteSpace = storeName.replace(/ /g,'');
-				$("<li><form><input class=\"check\" type=\"checkbox\" id="+storeNameWithoutWhiteSpace+" checked><span class=\"retailerName\">" +storeName
-					+ "</span></form></li>").appendTo("#retailer-results");
-			};
+/*function retailerNameCheckbox (storeName) {
+	var storeNameWithoutWhiteSpace = storeName.replace(/ /g,'');
+	$("<li><form><input class=\"check\" type=\"checkbox\" id="+storeNameWithoutWhiteSpace+" checked><span class=\"retailerName\">" +storeName
+		+ "</span></form></li>").appendTo("#retailer-results");
+};*/
 
 				//libraries that do dropdown autocomplete - jQuery autocomplete
 
@@ -43,7 +43,7 @@ $(document).ready(function() {
 		                if (data[i].storeZip == userEnteredRetailerZip) {
 		                    matchingRetailerNames.push(storeName);
 		                    //append new li with store name
-		                    retailerNameCheckbox(storeName);
+//retailerNameCheckbox(storeName);
 		                    //$("<li>"+data[i].storeName+"</li>").appendTo("#retailer-results");
 		                    emailAddresses.push(data[i].storeContact);
 		                }
