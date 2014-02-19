@@ -54,7 +54,7 @@ body {
   padding: 0; }
 
 header {
-  background-color: #94c514; }
+  background-color: #c1d851; }
   header h3 {
     display: inline-block;
     text-align: center;
@@ -65,7 +65,7 @@ header {
 
 nav button {
   margin: 0 15px 10px 15px;
-  background-color: #94c514; }
+  background-color: #c1d851; }
   nav button a {
     color: white; }
 
