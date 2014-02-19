@@ -98,7 +98,7 @@ function googleMapsLoaded() {
       // Format place address as only street address
       var addressSnippet = place.formatted_address.split(",", 2);
 
-      var retailerListItem = $('<li>' + place.name + '<span class="retailer-results-address">' + addressSnippet + '</span></li>');
+      var retailerListItem = $('<li>' + place.name + '<span class="retailer-results-list-address">' + addressSnippet + '</span></li>');
 
       var marker = new google.maps.Marker({
         map: map,
@@ -107,7 +107,7 @@ function googleMapsLoaded() {
         position: place.geometry.location
       });
 
-      retailerListItem.appendTo("#retailer-results");
+      retailerListItem.appendTo("#retailer-results-list");
       console.log(addressSnippet);
       bounds.extend(place.geometry.location);
     }
@@ -139,7 +139,7 @@ function googleMapsLoaded() {
 */
 
   function initialize() {
-    retailerResults = $("#retailer-results");
+    retailerResults = $("#retailer-results-list");
     $("#zip-search").on("click", searchUserInformationOnClick);
   }
 
