@@ -1,6 +1,6 @@
 function googleMapsLoaded() {
 
-  var map, retailerNameResults, infowindow;
+  var map, retailerResults, infowindow;
 
   // event handler: on click, geocode
   function searchUserInformationOnClick () {
@@ -13,7 +13,6 @@ function googleMapsLoaded() {
     $(".map-container").css("display", "block");
     // geocode input zipcode
     sendGeocodeRequest(userLocationAndPreferencesObj.zipcode);
-    console.log(userLocationAndPreferencesObj.zipcode);
   }
 
   function sendGeocodeRequest (location) {
@@ -102,7 +101,7 @@ function googleMapsLoaded() {
         position: place.geometry.location
       });
 
-      //retailerNameResults.innerHTML += '<li>' + place.name + '</li>'; <-- this will target nameresults ul
+      //retailerResults.innerHTML += '<li>' + place.name + '</li>'; <-- this will target nameresults ul
 
       bounds.extend(place.geometry.location);
     }
@@ -134,6 +133,7 @@ function googleMapsLoaded() {
 */
 
   function initialize() {
+    retailerResults = $("#retailer-results")
     $("#zip-search").on("click", searchUserInformationOnClick);
   }
 
