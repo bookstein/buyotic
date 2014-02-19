@@ -92,7 +92,13 @@ function googleMapsLoaded() {
     var bounds = new google.maps.LatLngBounds();
 
     for (var i = 0, place; place = places[i]; i++) {
+      // icon image for each place
       var image = "images/buyotic-logo-sm.png";
+
+      // Format place address as only street address
+      var addressSnippet = place.formatted_address.split(",", 2);
+
+      var retailerListItem = $('<li>' + place.name + '<span class="retailer-results-address">' + addressSnippet + '</span></li>');
 
       var marker = new google.maps.Marker({
         map: map,
@@ -101,8 +107,8 @@ function googleMapsLoaded() {
         position: place.geometry.location
       });
 
-      retailerResults.innerHTML += '<li>' + place.name + '<span class="retailerResults-address">' + place.vicinity + '</span></li>';
-      console.log(place.name);
+      retailerListItem.appendTo("#retailer-results");
+      console.log(addressSnippet);
       bounds.extend(place.geometry.location);
     }
 
