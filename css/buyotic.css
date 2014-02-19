@@ -116,6 +116,6 @@ section .right-column, section .middle-column, section .left-column {
     width: inherit;
     display: block; }
 
-#results #retailer-results-list-address {
+#results .retailer-results-list-address {
   font-style: italic;
   font-size: 9.75px; }
