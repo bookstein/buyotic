@@ -12,9 +12,11 @@
       <h1>Buyotic</h1>
       <h3>Buy Meat You Feel Good About</h3>
     </header>
+    <nav>
+      <a href="index.html"><button class="go-back btn btn-sm">Go back</button></a>
+    </nav>
     <div class="container">
-      <section id="demand-meat">
-        <a href="index.html"><button class="go-back btn btn-sm">Go back</button></a>
+      <section id="find-retailers-by-zip">
         <br>
         <br>
         <h3>Send a message to grocery stores near you!</h3>
@@ -29,10 +31,12 @@
           <ul id="retailer-results-list">
           </ul>
         </div>
-        <section class="map-container">
-          <div id="map-canvas">
-          </div>
-        </section>
+      </section>
+      <section class="map-container">
+        <div id="map-canvas">
+        </div>
+      </section>
+      <section id="message">
         <br>
         <div id="message-body">
           <h3>I want to buy antibiotic-free meat!</h3>
@@ -49,16 +53,6 @@
               I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
             </textarea>
             <br>
-            <!-- <h4>Optional: Choose certified brands or producers that you want to support:</h4>
-            <br>
-            <div class="checkbox" id="beef">
-              <label>
-                <input type="checkbox" value="beef"> Beef
-              </label>
-            </div>
-            <button class="select-btn"><img class="brand" id="applegate" src="images/applegate.jpeg" /></button>
-            <button class="select-btn"><img class="brand" id="marys" src="images/marys.jpeg" /></button>
-            <br>-->
             <br>
             <label id="signature-label">Signed,</label>
             <br>
@@ -68,7 +62,8 @@
             <button type="submit" class="btn btn-primary" id="message-submit">Send Message!</button>
           </form>
         </div>
-        <div id="fb-root"></div>
+        <div id="fb-root">
+        </div>
       </section>
     </div>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
