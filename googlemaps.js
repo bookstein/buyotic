@@ -101,8 +101,8 @@ function googleMapsLoaded() {
         position: place.geometry.location
       });
 
-      //retailerResults.innerHTML += '<li>' + place.name + '</li>'; <-- this will target nameresults ul
-
+      retailerResults.innerHTML += '<li>' + place.name + '<span class="retailerResults-address">' + place.vicinity + '</span></li>';
+      console.log(place.name);
       bounds.extend(place.geometry.location);
     }
 
@@ -133,7 +133,7 @@ function googleMapsLoaded() {
 */
 
   function initialize() {
-    retailerResults = $("#retailer-results")
+    retailerResults = $("#retailer-results");
     $("#zip-search").on("click", searchUserInformationOnClick);
   }
 
