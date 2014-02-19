@@ -115,3 +115,7 @@ section .right-column, section .middle-column, section .left-column {
     height: inherit;
     width: inherit;
     display: block; }
+
+#results #retailer-results-list-address {
+  font-style: italic;
+  font-size: 9.75px; }
