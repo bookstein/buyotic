@@ -45,11 +45,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*SASS file*/
+/*global SASS file*/
 /*Variables*/
-a {
-  color: ""; }
-
 /*CSS*/
 body {
   height: 100%;
@@ -57,14 +54,20 @@ body {
   padding: 0; }
 
 header {
-  background-color: green; }
+  background-color: #94c514; }
   header h1, header h3 {
     display: inline-block;
     text-align: center;
     color: white; }
   header #logo {
-    height: 100px;
-    width: 129px; }
+    height: auto;
+    width: auto; }
+
+nav button {
+  margin: 0 15px 10px 15px;
+  background-color: #94c514; }
+  nav button a {
+    color: white; }
 
 section.centered {
   text-align: center;

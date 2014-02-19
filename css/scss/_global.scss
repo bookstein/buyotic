@@ -21,15 +21,25 @@ body {
 
 
 header {
-	background-color: green;
+	background-color: $buyotic-green;
 	h1, h3 {
 		display: inline-block;
 		text-align: center;
 		color: white;
 	}
 	#logo {
-		height: 100px;
-		width: 129px;
+		height: auto;
+		width: auto;
+	}
+}
+
+nav {
+	button {
+		a {
+			color: white;
+		}
+			margin: 0 15px 10px 15px;
+		background-color: $buyotic-green;
 	}
 }
 
