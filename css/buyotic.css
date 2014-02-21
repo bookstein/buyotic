@@ -78,6 +78,12 @@ section .right-column, section .middle-column, section .left-column {
   margin: 0 15px 0 15px;
   width: 300px; }
 
+#home-header {
+  width: 100%; }
+  #home-header #logo {
+    width: 40%;
+    height: auto; }
+
 /* FIND MEAT */
 .checkbox {
   margin-right: 10px; }
