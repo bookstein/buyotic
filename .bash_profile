@@ -1,0 +1,1 @@
+source ~/Documents/Coursework/Thinkful/buyotic/.bashrc
