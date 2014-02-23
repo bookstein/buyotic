@@ -16,5 +16,13 @@
 		"storeAddress": "400 Lexington Ave",
 		"storeZip": "94608",
 		"storeContact": "contact@krogers.com",
-		"twitter": "@kroger"}
+		"twitter": "@kroger"},
+	"Rainbow Grocery Cooperative":
+		{
+		"storeName": "Rainbow Grocery Cooperative",
+		"storeAddress": "400 Lexington Ave",
+		"storeZip": "94110",
+		"storeContact": "contact@rainbow.org",
+		"twitter": "@rainbow"
+		}
 }
