@@ -1,13 +1,10 @@
-$(document).ready(function() {
+var buyotic = {
 
-	var buyotic = (function () {
+	hideOrShowElements: function hideOrShowElems (hideElement, showElement) {
+		$(showElement).css("display", "block");
+		$(hideElement).css("display", "none")
+	},
 
-		function hideOrRevealElems (hideElement, showElement) {
+	testMethod: alert("Testing!")
 
-					$(showElement).css("display", "block");
-					$(hideElement).css("display", "none")
-		}
-
-	})();
-
-});
+};
