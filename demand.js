@@ -29,11 +29,13 @@ $(document).ready(function() {
 
 
 			//Data
-				// match user entry with store info already in database
-			function getMatchingRetailerData (data) {
-					var userEnteredRetailerZip = $("#zip-entry").val();
-					var matchingRetailerNames = [];
+				// match user entry with store contact info already in database
+			function getRetailerContactInfo (data) {
+
+				// user will choose retailers they want to target - enter choices into array
+
 					var emailAddresses = [];
+					var twitterHandles = [];
 
 					// search json file for all objects with matching zip codes -- iterative
 
@@ -41,10 +43,6 @@ $(document).ready(function() {
 		                var storeName = data[i].storeName;
 		                // search the results using regular expression for the query
 		                if (data[i].storeZip == userEnteredRetailerZip) {
-		                    matchingRetailerNames.push(storeName);
-		                    //append new li with store name
-//retailerNameCheckbox(storeName);
-		                    //$("<li>"+data[i].storeName+"</li>").appendTo("#retailer-results");
 		                    emailAddresses.push(data[i].storeContact);
 		                }
 		            });
