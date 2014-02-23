@@ -61,7 +61,7 @@ $(document).ready(function() {
 
 			//Control
 
-			// user selects/confirms store
+			// change this section to only draw email addresses
 			$("#zip-search").on("click", function (event) {
 				event.preventDefault();
 				$.ajax({
