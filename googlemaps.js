@@ -98,7 +98,7 @@ function googleMapsLoaded() {
       // Format place address as only street address
       var addressSnippet = place.formatted_address.split(",", 2);
 
-      var retailerListItem = $('<li>' + place.name + '<span class="retailer-results-list-address">  ' + addressSnippet + '</span></li>');
+      var retailerListItem = $('<li><button class="btn btn-default btn-sm retailer-results-btn">' + place.name + '<span class="retailer-results-list-address">  ' + addressSnippet + '</span></button></li>');
 
       var marker = new google.maps.Marker({
         map: map,
