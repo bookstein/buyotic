@@ -139,8 +139,9 @@ function googleMapsLoaded() {
 */
 
   function initialize() {
+    var zipcode = $("#zip-entry").val();
     retailerResults = $("#retailer-results-list");
-    $("#zip-entry-search").on("submit", searchUserInformationOnClick);
+    $("#zip-search-demand").submit(searchUserInformationOnClick(zipcode));
   }
 
   initialize();
