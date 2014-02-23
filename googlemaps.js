@@ -138,12 +138,17 @@ function googleMapsLoaded() {
 */
 
   function initialize() {
-    var zipcode = $("#zip-entry").val();
     retailerResults = $("#retailer-results-list");
-    $("#zip-search-demand").submit(searchUserInformationOnClick(zipcode));
+    console.log("initializing");
+    $("form#zip-search-demand").submit( function (event) {
+      var zipcode = $("#zip-entry").val();
+      searchUserInformationOnClick(zipcode);
+      event.preventDefault();
+    });
   }
 
   initialize();
+
 };
 
 $(function() {
