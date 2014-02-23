@@ -2,14 +2,19 @@ $(document).ready(function() {
 
 	var demandMeat = (function() {
 
+		var selectedRetailerTargets = [];
+
 		function revealMessageBody () {
 			$("form#zip-search-demand").hide("fast");
 			$("#message-body").show("fast");
 		}
 
 
-		function displayRetailerTargetsInBody () {
+		function addRetailerTarget (selection) {
 			// update view based on choices
+			selection = $(event.target).text();
+			selectedRetailerTargets.push(selection);
+			console.log("Added " + selection + " to retailer target list");
 		}
 
 
@@ -52,11 +57,15 @@ $(document).ready(function() {
 
 
 
-		function retailerTargetContactCallback
+		function retailerTargetContactCallback () {
 			// on successful Ajax call --> fill in addresses/names
+		}
 
-		function userSubmitMessage
+
+		function userSubmitMessage () {
 			// post to database
+		}
+
 
 			$("#message-submit").on("click", function (event) {
 				event.preventDefault();
@@ -88,8 +97,10 @@ $(document).ready(function() {
 					}
 				}; // end of buttons object
 
-		function submitMessageCallback
+		function submitMessageCallback () {
 			// share your action on social media
+
+		}
 
 		bootbox.dialog({
 					message: "Your message has been sent!",
@@ -103,7 +114,8 @@ $(document).ready(function() {
 			});
 
 
-			$("#zip-search").on("click", revealMapAndMessage);
+			$("#zip-search").on("click", revealMessageBody);
+			$("#retailer-results-list").click(event, addRetailerTarget);
 
 	})();
 });
