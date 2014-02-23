@@ -1,68 +1,24 @@
 $(document).ready(function() {
 
+	var demandMeat = (function() {
 
-// User sends a message to store management asking for brands/certifications
-		//
+		function revealMessageBody () {
+			$("form#zip-search-demand").hide("fast");
+			$("#message-body").show("fast");
+		}
 
-		var demandMeat = (function() {
 
-			//View
-				// what user will see after inputting zip and searching for retailers
-			$("#zip-search").on("click", function () {
-				$("form#zip-search-demand").hide("fast");
-				$("#message-body").show("fast");
-			});
-
-				// show retailer names in checkboxes
-/*function retailerNameCheckbox (storeName) {
-	var storeNameWithoutWhiteSpace = storeName.replace(/ /g,'');
-	$("<li><form><input class=\"check\" type=\"checkbox\" id="+storeNameWithoutWhiteSpace+" checked><span class=\"retailerName\">" +storeName
-		+ "</span></form></li>").appendTo("#retailer-results");
-};*/
-
-				//libraries that do dropdown autocomplete - jQuery autocomplete
-
-				// get store contact email address (e.g. customerservice@berkeleybowl.com) and logo/face/image
-
-				// autopopulate a tweet and an email -- user chooses which one to send
-
-				// after message is sent, ask user for permission to be added to Buyotic wall
+		function displayRetailerTargetsInBody () {
+			// update view based on choices
+		}
 
 
 
-			//Data
-				// match user entry with store contact info already in database
-			function getRetailerContactInfo (data) {
-
-				// user will choose retailers they want to target - enter choices into array
-
-					var emailAddresses = [];
-					var twitterHandles = [];
-
-					// search json file for all objects with matching zip codes -- iterative
-
-					$.each(data, function (i, retailer) {
-		                var storeName = data[i].storeName;
-		                // search the results using regular expression for the query
-		                if (data[i].storeZip == userEnteredRetailerZip) {
-		                    emailAddresses.push(data[i].storeContact);
-		                }
-		            });
-		            console.log("Matching retailers:" + matchingRetailerNames)
-		            console.log("Emails sent to:" + emailAddresses);
-					//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
-					return matchingRetailerNames, emailAddresses;
-			};
-
-				// ?? send message to correct email address/twitter handle (POST?)
-
-				// data also stored in Buyotic database: user info, request made, store name, meat type
-				//ajax request
-
-			//Control
-
-			// change this section to only draw email addresses
-		/*	$("#zip-search").on("click", function (event) {
+		function getTargetContactInfo (data) {
+			var emailAddresses = [];
+			var twitterHandles = [];
+			// ajax call
+			/*	$("#zip-search").on("click", function (event) {
 				event.preventDefault();
 				$.ajax({
 					url: "retailerData.json",
@@ -79,8 +35,29 @@ $(document).ready(function() {
 				});
 			}); */
 
+			// search json file for all objects with matching zip codes -- iterative
 
-				// user sends message
+			$.each(data, function (i, retailer) {
+                var storeName = data[i].storeName;
+                // search the results using regular expression for the query
+                if (data[i].storeZip == userEnteredRetailerZip) {
+                    emailAddresses.push(data[i].storeContact);
+                }
+            });
+            console.log("Matching retailers:" + matchingRetailerNames)
+            console.log("Emails sent to:" + emailAddresses);
+			//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
+			return matchingRetailerNames, emailAddresses;
+		}
+
+
+
+		function retailerTargetContactCallback
+			// on successful Ajax call --> fill in addresses/names
+
+		function userSubmitMessage
+			// post to database
+
 			$("#message-submit").on("click", function (event) {
 				event.preventDefault();
 				var buttons = {
@@ -111,7 +88,10 @@ $(document).ready(function() {
 					}
 				}; // end of buttons object
 
-				bootbox.dialog({
+		function submitMessageCallback
+			// share your action on social media
+
+		bootbox.dialog({
 					message: "Your message has been sent!",
 					title: "Success",
 					show: true,
@@ -122,11 +102,8 @@ $(document).ready(function() {
 				}); // end of bootbox dialog
 			});
 
-		})();
 
+			$("#zip-search").on("click", revealMapAndMessage);
 
-		// User shares their message on social networks via Buyotic
-		//
-		//
-
+	})();
 });
