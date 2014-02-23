@@ -140,7 +140,7 @@ function googleMapsLoaded() {
 
   function initialize() {
     retailerResults = $("#retailer-results-list");
-    $("#zip-search").on("click", searchUserInformationOnClick);
+    $("#zip-entry-search").on("submit", searchUserInformationOnClick);
   }
 
   initialize();

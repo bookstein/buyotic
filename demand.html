@@ -24,10 +24,14 @@
         <br>
         <hr>
         <h4>Choose where to send your message:</h4>
-        <label>Enter zip code
-          <input id="zip-entry" type="text" placeholder="e.g. 94608">
-        </label>
-        <button type="submit" class="btn btn-primary" id="zip-search">Search for Stores Nearby</button>
+        <form id="zip-entry-search">
+          <label>Enter zip code
+            <input id="zip-entry" type="text" placeholder="e.g. 94608">
+          </label>
+          <button class="btn btn-primary">
+            <input type="submit" id="zip-search" value="Search for Stores">
+          </button>
+        </form>
         <div id="results">
           <ul id="retailer-results-list">
           </ul>
