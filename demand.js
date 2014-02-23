@@ -15,33 +15,28 @@ $(document).ready(function() {
 			selection = $(event.target).text();
 			selectedRetailerTargets.push(selection);
 			console.log("Added " + selection + " to retailer target list");
+			getTargetContactInfo(selection);
 		}
 
-
-
-		function getTargetContactInfo (data) {
-			var emailAddresses = [];
-			var twitterHandles = [];
+		function getTargetContactInfo (selection) {
 			// ajax call
-			/*	$("#zip-search").on("click", function (event) {
-				event.preventDefault();
-				$.ajax({
-					url: "retailerData.json",
-					dataType: "json",
-					type: "get",
-					success: function (data) {
-						getMatchingRetailerData(data);
-						showMessageBody();
-					},
-					error: function (xhr, ajaxOptions, thrownError) {
-	        			console.log(xhr.status);
-	        			console.log(thrownError);
-	      			}
-				});
-			}); */
+			$.ajax({
+				url: "retailerData.json",
+				dataType: "json",
+				type: "get",
+				success: function (data) {
+					console.log("This is the data variable: " + data);
+					targetContactCallback(selection);
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+        			console.log(xhr.status);
+        			console.log(thrownError);
+      			}
+			});
+		};
 
-			// search json file for all objects with matching zip codes -- iterative
-
+		function targetContactCallback (data, retailer) {
+			// on successful Ajax call --> fill in addresses/names
 			$.each(data, function (i, retailer) {
                 var storeName = data[i].storeName;
                 // search the results using regular expression for the query
@@ -49,16 +44,8 @@ $(document).ready(function() {
                     emailAddresses.push(data[i].storeContact);
                 }
             });
-            console.log("Matching retailers:" + matchingRetailerNames)
-            console.log("Emails sent to:" + emailAddresses);
 			//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
 			return matchingRetailerNames, emailAddresses;
-		}
-
-
-
-		function retailerTargetContactCallback () {
-			// on successful Ajax call --> fill in addresses/names
 		}
 
 
