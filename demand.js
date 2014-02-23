@@ -8,9 +8,8 @@ $(document).ready(function() {
 
 			//View
 				// what user will see after inputting zip and searching for retailers
-			function showMessageBody () {
-				$("#message-body").css("display", "block");
-			};
+
+
 				// show retailer names in checkboxes
 /*function retailerNameCheckbox (storeName) {
 	var storeNameWithoutWhiteSpace = storeName.replace(/ /g,'');
