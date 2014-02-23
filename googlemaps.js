@@ -8,6 +8,7 @@ function googleMapsLoaded() {
       city: "",
       zipcode: zipcode
     }
+    console.log("Now loading map for "+ userLocationAndPreferencesObj.zipcode);
     // show "loading"
     $(".map-container").css("display", "block");
     // geocode input zipcode
@@ -139,8 +140,7 @@ function googleMapsLoaded() {
 
   function initialize() {
     retailerResults = $("#retailer-results-list");
-    console.log("initializing");
-    $("form#zip-search-demand").submit( function (event) {
+    $("form#zip-search-demand").submit(function (event) {
       var zipcode = $("#zip-entry").val();
       searchUserInformationOnClick(zipcode);
       event.preventDefault();

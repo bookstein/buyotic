@@ -62,7 +62,7 @@ $(document).ready(function() {
 			//Control
 
 			// change this section to only draw email addresses
-			$("#zip-search").on("click", function (event) {
+		/*	$("#zip-search").on("click", function (event) {
 				event.preventDefault();
 				$.ajax({
 					url: "retailerData.json",
@@ -77,7 +77,7 @@ $(document).ready(function() {
 	        			console.log(thrownError);
 	      			}
 				});
-			});
+			}); */
 
 
 				// user sends message
