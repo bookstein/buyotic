@@ -10,44 +10,47 @@ $(document).ready(function() {
 		}
 
 
-		function addRetailerTarget (selection) {
+		function addRetailerTarget () {
 			// update view based on choices
-			selection = $(event.target).text();
+			var selection = $(event.target).find(".place-name").text();
 			selectedRetailerTargets.push(selection);
 			console.log("Added " + selection + " to retailer target list");
 			getTargetContactInfo(selection);
-		}
 
-		function getTargetContactInfo (selection) {
-			// ajax call
-			$.ajax({
-				url: "retailerData.json",
-				dataType: "json",
-				type: "get",
-				success: function (data) {
-					console.log("This is the data variable: " + data);
-					targetContactCallback(selection);
-				},
-				error: function (xhr, ajaxOptions, thrownError) {
-        			console.log(xhr.status);
-        			console.log(thrownError);
-      			}
-			});
+			function getTargetContactInfo () {
+				// ajax call
+				$.ajax({
+					url: "retailerData.json",
+					dataType: "json",
+					type: "get",
+					success: function (data) {
+						contactInfoCallback(data);
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+	        			console.log(xhr.status);
+	        			console.log(thrownError);
+	      			}
+				});
+			};
+
+			function contactInfoCallback (data) {
+				var emailAddresses =[];
+				var twitterHandles =[];
+				// on successful Ajax call --> fill in addresses/names
+				$.each(data, function (i) {
+	                var storeName = data[i].storeName;
+	                // search the results using regular expression for the query
+	                if (storeName == selection) {
+	                    emailAddresses.push(data[i].storeContact);
+	                    twitterHandles.push(data[i].twitter);
+	                    console.log("Email: " + emailAddresses);
+	                    console.log("Twitter: " + twitterHandles);
+	                }
+	            });
+				//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
+				return emailAddresses, twitterHandles;
+			}
 		};
-
-		function targetContactCallback (data, retailer) {
-			// on successful Ajax call --> fill in addresses/names
-			$.each(data, function (i, retailer) {
-                var storeName = data[i].storeName;
-                // search the results using regular expression for the query
-                if (data[i].storeZip == userEnteredRetailerZip) {
-                    emailAddresses.push(data[i].storeContact);
-                }
-            });
-			//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
-			return matchingRetailerNames, emailAddresses;
-		}
-
 
 		function userSubmitMessage () {
 			// post to database
