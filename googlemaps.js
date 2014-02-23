@@ -3,8 +3,7 @@ function googleMapsLoaded() {
   var map, retailerResults, infowindow;
 
   // event handler: on click, geocode
-  function searchUserInformationOnClick () {
-    var zipcode = $("#zip-entry").val();
+  function searchUserInformationOnClick (zipcode) {
     var userLocationAndPreferencesObj = {
       city: "",
       zipcode: zipcode
