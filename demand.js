@@ -8,7 +8,9 @@ $(document).ready(function() {
 
 			//View
 				// what user will see after inputting zip and searching for retailers
-
+			$("#zip-search").on("click", function () {
+				buyotic.hideOrShowElements("form#zip-search-demand", "#message-body");
+			});
 
 				// show retailer names in checkboxes
 /*function retailerNameCheckbox (storeName) {
