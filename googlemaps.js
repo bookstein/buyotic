@@ -3,7 +3,7 @@ function googleMapsLoaded() {
   var map, retailerResults, infowindow;
 
   // event handler: on click, geocode
-  function searchUserInformationOnClick (zipcode) {
+  function searchUserInformation (zipcode) {
     var userLocationAndPreferencesObj = {
       city: "",
       zipcode: zipcode
@@ -54,7 +54,7 @@ function googleMapsLoaded() {
       query: "grocery stores",
       types: ['store', 'establishment'],
       location: latlng,
-      radius: 16000 // 16,000 meters, or almost 10 miles
+      radius: 1600 // 1600 meters, or about 1 miles
     }
 
     // new map
