@@ -11,9 +11,11 @@ $(document).ready(function() {
 		};
 
 		this.view = {
-			messageView: function () {
+			viewMessage: function () {
 				// show message-body
+				$("#message-body").css("display", "block");
 			},
+
 			retailerContactField: function () {
 				// retailer names
 			}
