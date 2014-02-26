@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
-	function MeatDemand (zipcode) {
+	function MeatDemand () {
 		this.model = {
-			zipcode: zipcode,
 			retailers: [],
 			selectedRetailerTargets: [],
 			message: $("#message-text").text(),
