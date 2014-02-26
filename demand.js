@@ -1,111 +1,77 @@
 $(document).ready(function() {
 
-	var demandMeat = (function() {
-
-		var selectedRetailerTargets = [];
-
-		function revealMessageBody () {
-			$("form#zip-search-demand").hide("fast");
-			$("#message-body").show("fast");
-		}
-
-
-		function addRetailerTarget () {
-			// update view based on choices
-			var selection = $(event.target).find(".place-name").text();
-			selectedRetailerTargets.push(selection);
-			console.log("Added " + selection + " to retailer target list");
-			getTargetContactInfo(selection);
-
-			function getTargetContactInfo () {
-				// ajax call
-				$.ajax({
-					url: "retailerData.json",
-					dataType: "json",
-					type: "get",
-					success: function (data) {
-						contactInfoCallback(data);
-					},
-					error: function (xhr, ajaxOptions, thrownError) {
-	        			console.log(xhr.status);
-	        			console.log(thrownError);
-	      			}
-				});
-			};
-
-			function contactInfoCallback (data) {
-				var emailAddresses =[];
-				var twitterHandles =[];
-				// on successful Ajax call --> fill in addresses/names
-				$.each(data, function (i) {
-	                var storeName = data[i].storeName;
-	                // search the results using regular expression for the query
-	                if (storeName == selection) {
-	                    emailAddresses.push(data[i].storeContact);
-	                    twitterHandles.push(data[i].twitter);
-	                    console.log("Email: " + emailAddresses);
-	                    console.log("Twitter: " + twitterHandles);
-	                }
-	            });
-				//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
-				return emailAddresses, twitterHandles;
+	function MeatDemand (zipcode) {
+		this.model = {
+			zipcode: zipcode,
+			retailers: [],
+			selectedRetailerTargets: [],
+			message: $("#message-text").text(),
+			requireToSubmitMessage: function () {
+			// demand state must be X in order to submit (must have retailers and message)
 			}
 		};
 
-		function userSubmitMessage () {
-			// post to database
-		}
+		this.view = {
+			messageView: function () {
+				// show message-body
+			},
+			retailerContactField: function () {
+				// retailer names
+			}
+		};
+
+		this.controller = {
+
+			addRetailerTarget: function () {
+			// adds retailers to selectedRetailerTargets array
+
+			},
+			removeRetailerTarget: function () {
+			// removes retailers from selectedRetailerTargets array
+			}
+
+		};
+	};
 
 
-			$("#message-submit").on("click", function (event) {
-				event.preventDefault();
-				var buttons = {
-					"Facebook": {
-						className:"btn-fb",
-						callback: function () {
+	// after google returns store results, add this to the prototype
+	// what it should do is get the contact info of the store results
 
-						}
-					},
-					"Twitter": {
-						className:"btn-twitter",
-						callback: function () {
-
-						}
-					},
-					"I'm done": {
-						className: "btn-default",
-						callback: function () {
-							bootbox.dialog({
-								message: "Good luck in your hunt for good meat!",
-								title: "Thank you!",
-								show: true,
-								closeButton: true,
-								animate: false,
-								className: "success-dialog",
-							});
-						}
-					}
-				}; // end of buttons object
-
-		function submitMessageCallback () {
-			// share your action on social media
-
-		}
-
-		bootbox.dialog({
-					message: "Your message has been sent!",
-					title: "Success",
-					show: true,
-					closeButton: false,
-					animate: false,
-					className: "success-dialog",
-					buttons: buttons
-				}); // end of bootbox dialog
+	function loadContactInfo () {
+		MeatDemand.prototype.getContacts = function () {
+			$.ajax({
+				url: "retailerData.json",
+				dataType: "json",
+				type: "get",
+				success: function (data) {
+					contactInfoCallback(data);
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+	    			console.log(xhr.status);
+	    			console.log(thrownError);
+	  			}
 			});
+		};
+	};
 
+	function contactInfoCallback (data) {
+		var emailAddresses =[];
+		var twitterHandles =[];
+		// on successful Ajax call --> fill in addresses/names
+		$.each(data, function (i) {
+            var storeName = data[i].storeName;
+            // search the results using regular expression for the query
+            if (storeName == selection) {
+                emailAddresses.push(data[i].storeContact);
+                twitterHandles.push(data[i].twitter);
+                console.log("Email: " + emailAddresses);
+                console.log("Twitter: " + twitterHandles);
+            }
+        });
+		//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
+		return emailAddresses, twitterHandles;
+	};
 
-			$("#zip-search").on("click", revealMessageBody);
-			$("#retailer-results-list").click(event, addRetailerTarget);
-
-	})();
 });
+
+
