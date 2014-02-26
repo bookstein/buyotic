@@ -34,7 +34,6 @@ $(document).ready(function() {
 		};
 	};
 
-
 	// after google returns store results, add this to the prototype
 	// what it should do is get the contact info of the store results
 
@@ -72,6 +71,10 @@ $(document).ready(function() {
 		//$("#message-text").attr("action", "mailto:"+data[retailerName].storeContact);
 		return emailAddresses, twitterHandles;
 	};
+
+// I only want this to happen when the user pushes the button!!!!!
+	var demandMeat = new MeatDemand();
+	demandMeat.view.viewMessage();
 
 });
 
