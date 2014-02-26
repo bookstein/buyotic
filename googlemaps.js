@@ -115,41 +115,24 @@ function googleMapsLoaded() {
     map.fitBounds(bounds);
   }
 
-  /*
-  // SEE http://duncan99.wordpress.com/2011/10/08/google-maps-api-infowindows/ for help!
-  function createInfoWindow (places) {
-
-    var info = "<div id='window-content'><h3>" + results.name + "</h3><br><h5>" + results.vicinity + "</h5></div>";
-
-
-    infowindow = new google.maps.InfoWindow({
-      content: info,
-      map: map
-    });
-
-    google.maps.event.addListener(marker, 'mouseover', function() {
-      infowindow.open(map, this);
-    });
-
-    // assuming you also want to hide the infowindow when user mouses-out
-    google.maps.event.addListener(marker, 'mouseout', function() {
-        infowindow.close();
-    });
-  }
-*/
-
-  function initialize() {
+  function initialize(event) {
+    var zipcode = $("#zip-entry").val();
     retailerResults = $("#retailer-results-list");
-    $("form#zip-search-demand").submit(function (event) {
-      var zipcode = $("#zip-entry").val();
-      searchUserInformationOnClick(zipcode);
-      event.preventDefault();
-    });
-  }
+    if (zipcode.length == 5) {
+        searchUserInformation(zipcode);
+    }
 
-  initialize();
+    else {
+      alert("Please enter a valid 5-digit zipcode.");
+      return;
+    }
+    event.preventDefault();
+  };
+
+  $("form#zip-search-demand").submit(event, initialize);
 
 };
+
 
 $(function() {
   // adds <script> to HTML only after page has loaded, uses callback to call initialize()
