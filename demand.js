@@ -1,38 +1,34 @@
+	// page load
 $(document).ready(function() {
 
-	function MeatDemand () {
-		this.model = {
-			retailers: [],
-			selectedRetailerTargets: [],
-			message: $("#message-text").text(),
-			requireToSubmitMessage: function () {
-			// demand state must be X in order to submit (must have retailers and message)
-			}
-		};
+	// google maps load
 
-		this.view = {
-			viewMessage: function () {
-				// show message-body
-				$("#message-body").css("display", "block");
-			},
+	// demand class!!!
 
-			retailerContactField: function () {
-				// retailer names
-			}
-		};
+	function MeatDemand (zipcode) {
+		this.zipcode: zipcode,
+		this.demandTargets: [],
+		this.emailAddresses: [],
+		this.twitterHandles: []
 
-		this.controller = {
+		// bind event handler for adding to demandTargets, email Addresses, twitterHandles -- contacts callback?
+	}
 
-			addRetailerTarget: function () {
-			// adds retailers to selectedRetailerTargets array
+	// View: (no logic)
+		// new demand
+		// search results and message
+		// submit message
 
-			},
-			removeRetailerTarget: function () {
-			// removes retailers from selectedRetailerTargets array
-			}
+	// Model: (no logic)
+		// AJAX request
+		// store selected retailers
+		// push meatDemand object to Firebase
 
-		};
-	};
+	// Controller (logic)
+		// bind event handlers
+		// create new MeatDemand on zip submit with zipcode parameter
+
+
 
 	// after google returns store results, add this to the prototype
 	// what it should do is get the contact info of the store results
