@@ -152,14 +152,154 @@
 	};
 
 
-	var demandMeat = new DemandView();
+	// load page
+	function initializePage () {
+		demandView = new DemandView();
+		demandController = new DemandController();
+	};
 
-	$("#zip-search").submit(function () {
-		var zipcode = $("#zip-entry").val();
+	// load Google Maps
+	function loadGoogleMapsScript() {
+	    var script = document.createElement('script');
+	    script.type = 'text/javascript';
+	    script.src = 'https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCcAyejmYX9-FWjezJw1Ywh-8tOXV_sFFg&sensor=true&' +
+	        'callback=initializePage';
+	    document.body.appendChild(script);
+  	};
 
-	})
-// I only want this to happen when the user pushes the button!!!!!
-	//demandMeat.view.viewMessage();
+	loadGoogleMapsScript();
+	//initializePage();
+
+	$("#new-search").click(function () {
+		// clear all input
+		demandView.newSearch();
+	});
+
+//});
 
 
+// Google Maps
+
+
+  var map, infowindow;
+
+  // event handler: on click, geocode
+  function searchUserInformation (zipcode) {
+    var userLocationAndPreferencesObj = {
+      city: "",
+      zipcode: zipcode
+    }
+    console.log("Now loading map for "+ userLocationAndPreferencesObj.zipcode);
+    // show "loading"
+    // geocode input zipcode
+    sendGeocodeRequest(userLocationAndPreferencesObj.zipcode);
+  }
+
+  function sendGeocodeRequest (location) {
+    //geocode request object literal + callback
+    var geocodeRequest = {
+        address: location
+    };
+
+    // initiates new Geocoder service object
+    var geocodingService = new google.maps.Geocoder();
+
+    // sends geocode request (object, callback)
+    geocodingService.geocode(geocodeRequest, geocodeCallback);
+  }
+
+  function geocodeCallback (results, status) {
+    //success
+      //return zipcode as latlng
+      //pass info to text search request
+      // remove loading text
+    if (status == google.maps.GeocoderStatus.OK) {
+      var latlng = results[0].geometry.location;
+
+      //run text search request
+      initializeWithTextSearchRequest(latlng);
+    }
+
+    // error
+      // show error message
+    else {
+      alert("We're sorry, there was an error: " + status);
+    }
+
+  }
+
+  function initializeWithTextSearchRequest (latlng) {
+    // create text request object
+    var textSearchRequest = {
+      query: "grocery stores",
+      types: ['store', 'establishment'],
+      location: latlng,
+      radius: 1600 // 1600 meters, or about 1 miles
+    }
+
+    // new map
+    map = new google.maps.Map(document.getElementById("map-canvas"), {
+      center: latlng,
+      zoom: 16 // zoom level isn't working
+    });
+
+    // make request to Places Service
+    var placesService = new google.maps.places.PlacesService(map);
+
+    // pass in request and callback, send search request
+    placesService.textSearch(textSearchRequest, textSearchCallback);
+  }
+
+  function textSearchCallback (results, status, pagination) {
+    //on success
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(results);
+      //add markers
+      createMarkers(results);
+      // create infowindow
+        // createInfoWindow(results);
+      //add pagination
+
+    }
+
+    //on error
+    else {
+      alert("We're sorry, there was an error: " + status)
+    }
+  }
+
+  function createMarkers (places) {
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0, place; place = places[i]; i++) {
+      // icon image for each place
+      var image = "images/buyotic-logo-sm.png";
+
+      // Format place address as only street address
+      var addressSnippet = place.formatted_address.split(",", 2);
+
+      var retailerListItem = $('<li><button class="btn btn-default btn-sm retailer-results-btn"><span class="place-name">' + place.name + '</span><span class="retailer-results-list-address">  ' + addressSnippet + '</span></button></li>');
+
+      var marker = new google.maps.Marker({
+        map: map,
+        icon: image,
+        title: place.name,
+        position: place.geometry.location
+      });
+
+      retailerListItem.appendTo("#retailer-results-list");
+      console.log(addressSnippet);
+      bounds.extend(place.geometry.location);
+    }
+
+    map.fitBounds(bounds);
+  }
+
+// QUESTIONS
+	// should I just do a new var demandView = DemandView() instead of showNewDemandPage??
+	// bind all event handlers at once?
+	// where should I stick zipcode?? View? Model? Controller? Do not repeat...
+	// why do I have to bind the new func as well as class.prototype.functionName = function ???
+	// what's the good of classes if I can't actually see them in the insepctor? (at least not with doc.ready)
+	// why isn't binding events working???
 
