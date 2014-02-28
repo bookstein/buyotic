@@ -101,8 +101,7 @@
 
 		function DemandController () {
 			// user submits zip code
-			// validates zip code
-
+			$("form#zip-search-demand").submit(this.searchZip.bind(this));
 			// user chooses targets
 			// user removes targets
 			// user sends message
@@ -110,6 +109,22 @@
 
 		// add prototype to validate message (triggers alerts if something is wrong)
 
+		DemandController.prototype.searchZip = function (event) {
+			event.preventDefault();
+			zipcode = $("#zip-entry").val();
+			if (zipcode.length == 5) {
+				demandView.showDemandPage();
+		    	searchUserInformation(zipcode);
+		    	return zipcode;
+	    	}
+	    	else {
+	    		alert("Please enter a valid 5-digit zipcode.");
+	    		return;
+	    	}
+	    }
+
+		//addTarget:
+		//removeTarget:
 
 	// after google returns store results, add this to the prototype
 	// what it should do is get the contact info of the store results
