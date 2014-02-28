@@ -21,19 +21,6 @@ $(document).ready(function() {
 
 	// Model: (no logic)
 		// AJAX request
-		// store selected retailers
-		// push meatDemand object to Firebase
-
-	// Controller (logic)
-		// bind event handlers
-		// create new MeatDemand on zip submit with zipcode parameter
-
-
-
-	// after google returns store results, add this to the prototype
-	// what it should do is get the contact info of the store results
-
-	function loadContactInfo () {
 		MeatDemand.prototype.getContacts = function () {
 			$.ajax({
 				url: "retailerData.json",
@@ -48,7 +35,21 @@ $(document).ready(function() {
 	  			}
 			});
 		};
-	};
+		// store selected retailers
+		// push meatDemand object to Firebase
+
+	// Controller (logic)
+		// bind event handlers
+		// create new MeatDemand on zip submit with zipcode parameter
+
+
+
+	// after google returns store results, add this to the prototype
+	// what it should do is get the contact info of the store results
+
+
+
+
 
 	function contactInfoCallback (data) {
 		var emailAddresses =[];
