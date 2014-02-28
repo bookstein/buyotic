@@ -4,16 +4,30 @@ $(document).ready(function() {
 	// google maps load?
 
 	// View: (no logic)
-		// new demand page
-		function DemandView () {
+		// new demand page: this thing shows user results, shows user selection
+		function DemandView (zipcode) {
+			this.zipcode = zipcode;
+			this.$zipSubmit = $("#zip-search");
+			this.$zipForm = $("#zip-search-demand");
+			this.$demand = $("#demand-page");
+			this.$resultsList = $("#retailer-results-list");
+
 		// what happens when user clicks "submit" button?
-			// reveal results section
+			// reveal google maps results section (list)
+			$zipSubmit.on("submit", this.showDemandPage.bind(this));
 		// what happens when user clicks retailer button?
-			// retailer added to "To" in message with "X" symbol
+
+			// only bind this after results...!!?
+			// retailer added to "To" in message with "X" symbol (selection)
 			// retailer button appears pushed
+
+
+
+
 		// what happens if user clicks "X" on retailer button ("to" field)?
 			// retailer removed from "To" in message
 			// button unpushed
+
 		// what happens when user edits message text?
 			// if user has empty message, highlight field in red
 		// what happens when user submits message?
@@ -21,7 +35,32 @@ $(document).ready(function() {
 			// "share" dialog pop-up
 		}
 
-		// search results and message
+		// show search results and message
+
+		DemandView.prototype.showDemandPage = function () {
+			if (!this.zipcode.length == 5) {
+				alert("Please enter a 5-digit zipcode");
+				return;
+			}
+
+			else {
+				this.$demand.css("display", "block");
+
+			}
+		}
+
+		DemandView.prototype.targetAdded = function () {
+			// this.$resultsList.on("click", "button", function (event) {
+			event.preventDefault();
+			$(this).addClass("active");
+
+
+		}
+
+		DemandView.prototype.targetRemoved = function () {
+
+		}
+
 		// submit message
 
 	// Model: (no logic)
