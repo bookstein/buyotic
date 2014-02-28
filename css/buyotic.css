@@ -112,19 +112,17 @@ section .right-column, section .middle-column, section .left-column {
   line-height: 2em;
   font-size: 1.2em; }
 
-#message-body {
+#message {
   margin: 20px;
-  border: 2px dotted black;
+  border: 2px solid black;
   padding: 10px;
-  background-color: #d7f4fc;
+  background-color: #c1d851;
   height: 100%; }
-
-#message-text {
-  height: auto; }
-
-.certification {
-  width: 100px;
-  height: 100px; }
+  #message #message-text {
+    height: auto; }
+  #message .certification {
+    width: 100px;
+    height: 100px; }
 
 .brand {
   width: auto;

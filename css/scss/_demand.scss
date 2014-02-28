@@ -10,22 +10,26 @@
 	font-size: 1.2em;
 }
 
-#message-body {
+#message {
 	margin: 20px;
-	border: 2px dotted black;
+	border: 2px solid black;
 	padding: 10px;
-	background-color: rgb(215, 244, 252);
+	background-color: $buyotic-green;
 	height: 100%;
+
+	#message-text {
+		height: auto;
+	}
+
+	.certification {
+		width: 100px;
+		height: 100px;
+	}
 }
 
-#message-text {
-	height: auto;
-}
 
-.certification {
-	width: 100px;
-	height: 100px;
-}
+
+
 
 .brand {
 	width: auto;
