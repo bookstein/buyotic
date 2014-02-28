@@ -1,7 +1,6 @@
-	// page load
+//$(document).ready(function () {	// page load
 
-
-	// google maps load?
+	var zipcode, demandView, demandModel, demandController;
 
 	// View: (no logic)
 		// new demand page: this thing shows user results, shows user selection
