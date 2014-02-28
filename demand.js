@@ -3,25 +3,42 @@ $(document).ready(function() {
 
 	// google maps load
 
-	// demand class!!!
-
-	function MeatDemand (zipcode) {
-		this.zipcode: zipcode,
-		this.demandTargets: [],
-		this.emailAddresses: [],
-		this.twitterHandles: []
-
-		// bind event handler for adding to demandTargets, email Addresses, twitterHandles -- contacts callback?
-	}
-
 	// View: (no logic)
-		// new demand
+		// new demand page
+		function DemandView () {
+		// what happens when user clicks "submit" button?
+			// reveal results section
+		// what happens when user clicks retailer button?
+			// retailer added to "To" in message with "X" symbol
+			// retailer button appears pushed
+		// what happens if user clicks "X" on retailer button ("to" field)?
+			// retailer removed from "To" in message
+			// button unpushed
+		// what happens when user edits message text?
+			// if user has empty message, highlight field in red
+		// what happens when user submits message?
+			// gray modal background
+			// "share" dialog pop-up
+		}
+
 		// search results and message
 		// submit message
 
 	// Model: (no logic)
+		// demand object
+		// demand class!!!
+
+		function DemandModel (zipcode) {
+			this.zipcode: zipcode,
+			this.demandTargets: [],
+			this.emailAddresses: []
+
+			// bind event handler for adding to demandTargets, email Addresses, twitterHandles -- contacts callback?
+		}
+
+		// Firebase init
 		// AJAX request
-		MeatDemand.prototype.getContacts = function () {
+		DemandModel.prototype.getContacts = function () {
 			$.ajax({
 				url: "retailerData.json",
 				dataType: "json",
