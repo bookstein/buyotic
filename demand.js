@@ -1,7 +1,7 @@
 	// page load
 $(document).ready(function() {
 
-	// google maps load
+	// google maps load?
 
 	// View: (no logic)
 		// new demand page
@@ -30,8 +30,7 @@ $(document).ready(function() {
 
 		function DemandModel (zipcode) {
 			this.zipcode: zipcode,
-			this.demandTargets: [],
-			this.emailAddresses: []
+			this.demandTargets: []
 
 			// bind event handler for adding to demandTargets, email Addresses, twitterHandles -- contacts callback?
 		}
@@ -59,6 +58,14 @@ $(document).ready(function() {
 		// bind event handlers
 		// create new MeatDemand on zip submit with zipcode parameter
 
+		function DemandController () {
+			// user submits zip code
+			// user chooses targets
+			// user removes targets
+			// user sends message
+		}
+
+		// add prototype to validate message (triggers alerts if something is wrong)
 
 
 	// after google returns store results, add this to the prototype
