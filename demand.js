@@ -1,12 +1,11 @@
 	// page load
-$(document).ready(function() {
+
 
 	// google maps load?
 
 	// View: (no logic)
 		// new demand page: this thing shows user results, shows user selection
-		function DemandView (zipcode) {
-			this.zipcode = zipcode;
+		function DemandView () {
 			this.$zipSubmit = $("#zip-search");
 			this.$zipForm = $("#zip-search-demand");
 			this.$demand = $("#demand-page");
@@ -14,7 +13,7 @@ $(document).ready(function() {
 
 		// what happens when user clicks "submit" button?
 			// reveal google maps results section (list)
-			$zipSubmit.on("submit", this.showDemandPage.bind(this));
+			this.$zipSubmit.on("click", this.showDemandPage.bind(this));
 		// what happens when user clicks retailer button?
 
 			// only bind this after results...!!?
@@ -38,26 +37,20 @@ $(document).ready(function() {
 		// show search results and message
 
 		DemandView.prototype.showDemandPage = function () {
-			if (!this.zipcode.length == 5) {
-				alert("Please enter a 5-digit zipcode");
-				return;
-			}
-
-			else {
-				this.$demand.css("display", "block");
-
-			}
+			this.$demand.css("display", "block");
 		}
 
-		DemandView.prototype.targetAdded = function () {
-			// this.$resultsList.on("click", "button", function (event) {
-			event.preventDefault();
-			$(this).addClass("active");
-
-
+		function targetAdded () {
+			// this contains an event handler though...!
+			this.$resultsList.on("click", "button", function (event) {
+				event.preventDefault();
+				var targetName = $(this).find(".place-name").text();
+				$(this).addClass("active");
+				$(this).clone().text(targetName).appendTo("#message-targets");
+			});
 		}
 
-		DemandView.prototype.targetRemoved = function () {
+		function targetRemoved () {
 
 		}
 
@@ -68,15 +61,15 @@ $(document).ready(function() {
 		// demand class!!!
 
 		function DemandModel (zipcode) {
-			this.zipcode: zipcode,
-			this.demandTargets: []
+			this.zipcode = zipcode;
+			this.demandTargets = [];
 
 			// bind event handler for adding to demandTargets, email Addresses, twitterHandles -- contacts callback?
 		}
 
 		// Firebase init
 		// AJAX request
-		DemandModel.prototype.getContacts = function () {
+		function getContacts () {
 			$.ajax({
 				url: "retailerData.json",
 				dataType: "json",
@@ -99,6 +92,8 @@ $(document).ready(function() {
 
 		function DemandController () {
 			// user submits zip code
+			// validates zip code
+
 			// user chooses targets
 			// user removes targets
 			// user sends message
@@ -132,10 +127,15 @@ $(document).ready(function() {
 		return emailAddresses, twitterHandles;
 	};
 
-// I only want this to happen when the user pushes the button!!!!!
-	var demandMeat = new MeatDemand();
-	demandMeat.view.viewMessage();
 
-});
+	var demandMeat = new DemandView();
+
+	$("#zip-search").submit(function () {
+		var zipcode = $("#zip-entry").val();
+
+	})
+// I only want this to happen when the user pushes the button!!!!!
+	//demandMeat.view.viewMessage();
+
 
 
