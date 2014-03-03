@@ -111,9 +111,10 @@ section .right-column, section .middle-column, section .left-column {
   margin-right: 10px; }
 
 .map-container {
-  background: transparent url(../images/ajax-loader.gif) no-repeat;
+  background: transparent url(../images/ajax-loader.gif) center no-repeat;
   height: 300px;
-  width: 70%; }
+  width: 70%;
+  display: inline-block; }
   .map-container #map-canvas {
     border: 2px solid #000;
     padding: 3px;
@@ -126,26 +127,35 @@ section .right-column, section .middle-column, section .left-column {
   font-size: 9.75px; }
 
 /* DEMAND MEAT */
+#zip-search-demand {
+  padding: 10px; }
+
 #demand-page {
-  display: none; }
-
-#retailer-name {
-  width: 200px;
-  line-height: 2em;
-  font-size: 1.2em; }
-
-#message {
-  margin: 20px;
-  border: 2px solid black;
-  padding: 10px;
-  background-color: #c1d851;
-  height: 100%; }
-  #message #message-text {
-    height: auto; }
-  #message .certification {
-    width: 100px;
-    height: 100px; }
-
-.brand {
-  width: auto;
-  height: auto; }
+  display: none;
+  padding: 10px; }
+  #demand-page #results {
+    display: inline-block;
+    width: 50%; }
+    #demand-page #results .retailer-results-list-address {
+      font-style: italic;
+      font-size: 9.75px; }
+    #demand-page #results .map-container {
+      background: transparent url(../images/ajax-loader.gif) center no-repeat;
+      height: 300px; }
+      #demand-page #results .map-container #map-canvas {
+        border: 2px solid #000;
+        padding: 3px;
+        margin: 0; }
+  #demand-page #message {
+    margin: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #c1d851;
+    height: 100%;
+    width: 50%;
+    display: inline-block; }
+    #demand-page #message #message-text {
+      height: auto; }
+    #demand-page #message .certification {
+      width: 100px;
+      height: 100px; }
