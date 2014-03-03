@@ -13,17 +13,16 @@
 		// what happens when user clicks "submit" button?
 			// reveal google maps results section (list)
 			//this.$zipSubmit.on("click", this.showDemandPage.bind(this)); MUST COMMENT THIS OUT IN ORDER FOR GMAPS TO WORK
-
+			$("#new-search").on('click', this.newSearch.bind(this));
 		// what happens when user clicks retailer button?
-
-			// only bind this after results...!!?
 			// retailer added to "To" in message with "X" symbol (selection)
 			// retailer button appears pushed
+			this.$resultsList.on("load", this.targetAdded.bind(this));
 
-
-		// what happens if user clicks "X" on retailer button ("to" field)?
+			// what happens if user clicks "X" on retailer button ("to" field)?
 			// retailer removed from "To" in message
 			// button unpushed
+			this.$resultsList.on("load", this.targetRemoved.bind(this));
 
 		// what happens when user edits message text?
 			// if user has empty message, highlight field in red
