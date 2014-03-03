@@ -132,28 +132,34 @@ section .right-column, section .middle-column, section .left-column {
 
 #demand-page {
   display: none;
-  padding: 10px; }
-  #demand-page #results {
-    display: inline-block;
-    width: 50%; }
-    #demand-page #results .retailer-results-list-address {
-      font-style: italic;
-      font-size: 9.75px; }
-    #demand-page #results .map-container {
+  padding: 0;
+  margin: 0; }
+  #demand-page #choose-retailer-targets #results {
+    display: block;
+    margin: 10px; }
+    #demand-page #choose-retailer-targets #results #retailer-results-list {
+      display: inline-block; }
+      #demand-page #choose-retailer-targets #results #retailer-results-list .retailer-results-list-address {
+        font-style: italic;
+        font-size: 9.75px; }
+    #demand-page #choose-retailer-targets #results .map-container {
+      display: inline-block;
       background: transparent url(../images/ajax-loader.gif) center no-repeat;
-      height: 300px; }
-      #demand-page #results .map-container #map-canvas {
+      height: 300px;
+      vertical-align: top; }
+      #demand-page #choose-retailer-targets #results .map-container #map-canvas {
         border: 2px solid #000;
         padding: 3px;
         margin: 0; }
   #demand-page #message {
+    display: block;
     margin: 20px;
-    border: 2px solid black;
-    padding: 10px;
-    background-color: #c1d851;
+    border: none;
     height: 100%;
-    width: 50%;
-    display: inline-block; }
+    width: 100%; }
+    #demand-page #message #message-body {
+      background-color: #c1d851;
+      padding: 10px; }
     #demand-page #message #message-text {
       height: auto; }
     #demand-page #message .certification {
