@@ -60,32 +60,43 @@
         </section>
         <section id="message">
           <br>
+          <div class="circle-container">
+            <div class="circle-number">
+              <h2>3</h2>
+            </div>
+          </div>
+          <div class="heading-container">
+            <h4>Send your message!</h4>
+          </div>
           <div id="message-targets">
             <ul id="retailer-targets-list">
             </ul>
           </div>
-          <h3>I want to buy antibiotic-free meat!</h3>
-          <br>
-          <h4>Please stock meat that prevents the spread of antibiotic-resistant super-bugs.</h4>
-          <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
-          <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
-          <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
-          <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
-          <br>
-          <br>
-          <form id="message-text" method="post" action="mailto:youremail@youremail.com">
-            <textarea rows="4" id="message-text" class="form-control">
-              I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
-            </textarea>
+          <div id="message-body">
+            <br>
+            <h3>I want to buy antibiotic-free meat!</h3>
+            <br>
+            <h4>Please stock meat that prevents the spread of antibiotic-resistant super-bugs.</h4>
+            <img class="certification" id="AHC" src="images/AHC.jpeg"/> <!-- American Humane Certified -->
+            <img class="certification" id="AWA" src="images/AWA.jpeg"/> <!-- Animal Welfare Approved -->
+            <img class="certification" id="CH" src="images/CH.jpeg"/> <!-- Certified Humane -->
+            <img class="certification" id="USDA" src="images/USDA.jpeg"/> <!-- USDA Process Verified -->
             <br>
             <br>
-            <label id="signature-label">Signed,</label>
-            <br>
-            <input id="signature-entry" type="text"></input>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary" id="message-submit">Send Message!</button>
-          </form>
+            <form id="message-text" method="post" action="mailto:youremail@youremail.com">
+              <textarea rows="4" id="message-text" class="form-control">
+                I request that you stock meat products that have been certified antibiotic free! Products that have been certified AHC, AWA, Certified Humane, or USDA Process Verified are what I want to eat to be healthy and to promote better animal treatment and safety. I would buy these products if they were available to me!
+              </textarea>
+              <br>
+              <br>
+              <label id="signature-label">Signed,</label>
+              <br>
+              <input id="signature-entry" type="text"></input>
+              <br>
+              <br>
+              <button type="submit" class="btn btn-primary" id="message-submit">Send Message!</button>
+            </form>
+          </div>
           <div id="fb-root">
           </div>
         </section>
