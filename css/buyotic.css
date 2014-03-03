@@ -142,6 +142,8 @@ section .right-column, section .middle-column, section .left-column {
       #demand-page #choose-retailer-targets #results #retailer-results-list .retailer-results-list-address {
         font-style: italic;
         font-size: 9.75px; }
+      #demand-page #choose-retailer-targets #results #retailer-results-list .retailer-results-btn {
+        margin: 2px 0; }
     #demand-page #choose-retailer-targets #results .map-container {
       display: inline-block;
       background: transparent url(../images/ajax-loader.gif) center no-repeat;
