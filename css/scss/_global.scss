@@ -5,6 +5,7 @@ $buyotic-green: #c1d851;
 $sans-serif-font: "Futura", "Open Sans", Arial, sans-serif;
 $serif-font: "Times New Roman", serif;
 $font-size: 13px;
+$orange: #e86425;
 
 
 
@@ -59,4 +60,32 @@ section {
 
 .bt-twitter {
 
+}
+
+.circle-container {
+	display: inline-block;
+	margin: 0 5px;
+
+	.circle-number {
+		-webkit-border-radius: 999px;
+		-moz-border-radius: 999px;
+		border-radius: 999px;
+		behavior: url(PIE.htc);
+		background-color: $orange;
+		width: 40px;
+		height: 40px;
+		padding: 10px;
+		text-align: center;
+
+		h2 {
+			font-weight: bold;
+			font-size: 1.6em;
+			color: #fff;
+			margin: auto;
+		}
+	}
+}
+
+.heading-container {
+	display: inline-block;
 }

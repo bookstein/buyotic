@@ -78,6 +78,28 @@ section .right-column, section .middle-column, section .left-column {
   margin: 0 15px 0 15px;
   width: 300px; }
 
+.circle-container {
+  display: inline-block;
+  margin: 0 5px; }
+  .circle-container .circle-number {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    behavior: url(PIE.htc);
+    background-color: #e86425;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    text-align: center; }
+    .circle-container .circle-number h2 {
+      font-weight: bold;
+      font-size: 1.6em;
+      color: #fff;
+      margin: auto; }
+
+.heading-container {
+  display: inline-block; }
+
 #home-header {
   width: 100%; }
   #home-header #logo {
