@@ -43,22 +43,25 @@
 		DemandView.prototype.newSearch = function () {
 			this.$demand.hide();
 			$("#new-search").hide();
+			$("#retailer-results-list").empty();
 			this.$zipSubmit.prop("disabled", false);
 		}
 
-		function targetAdded () {
-			// this contains an event handler though...!
-			this.$resultsList.on("click", "button", function (event) {
-				event.preventDefault();
-				var targetName = $(this).find(".place-name").text();
-				$(this).addClass("active");
-				$(this).clone().text(targetName).appendTo("#message-targets");
-			});
+		DemandView.prototype.targetAdded = function (event) {
+			event.preventDefault();
+			var targetName = $(this).find(".place-name").text();
+			$(this).addClass("active");
+			$(this).clone().text(targetName).appendTo("#message-targets");
 		}
 
-		function targetRemoved () {
-
+		DemandView.prototype.targetRemoved = function (event) {
+			event.preventDefault();
+			var targetName = $(this).find(".place-name").text();
+			$(this).removeClass("active");
+			// remove from message-targets array
 		}
+
+
 
 		// submit message
 
