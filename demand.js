@@ -17,12 +17,11 @@
 		// what happens when user clicks retailer button?
 			// retailer added to "To" in message with "X" symbol (selection)
 			// retailer button appears pushed
-			this.$resultsList.on("load", this.targetAdded.bind(this));
-
+			this.$resultsList.on("load", this.addOrRemoveTargets.bind(this));
+			console.log("this is " + this);
 			// what happens if user clicks "X" on retailer button ("to" field)?
 			// retailer removed from "To" in message
 			// button unpushed
-			this.$resultsList.on("load", this.targetRemoved.bind(this));
 
 		// what happens when user edits message text?
 			// if user has empty message, highlight field in red
@@ -47,18 +46,35 @@
 			this.$zipSubmit.prop("disabled", false);
 		}
 
-		DemandView.prototype.targetAdded = function (event) {
-			event.preventDefault();
+		// event listener on button click
+		DemandView.prototype.addOrRemoveTargets = function () {
+			console.log(this);
+			this.$resultsList.on("click", "button", function (event) {
+				event.preventDefault();
+
+				if ($(this).hasClass("active")) {
+					targetRemoved();
+					console.log(this);
+				}
+
+				else {
+					targetAdded();
+				}
+
+			});
+		}
+
+		function targetAdded () {
 			var targetName = $(this).find(".place-name").text();
 			$(this).addClass("active");
 			$(this).clone().text(targetName).appendTo("#message-targets");
+			console.log("added target");
 		}
 
-		DemandView.prototype.targetRemoved = function (event) {
-			event.preventDefault();
-			var targetName = $(this).find(".place-name").text();
+		function targetRemoved () {
 			$(this).removeClass("active");
 			// remove from message-targets array
+			console.log("removed target");
 		}
 
 
@@ -103,7 +119,6 @@
 			// user submits zip code
 			$("form#zip-search-demand").submit(this.searchZip.bind(this));
 			// user chooses targets
-			$("#retailer-results-list").on("click", "button", this.addOrRemoveTargets.bind(this));
 			// user removes targets
 			// user sends message
 		}
@@ -122,19 +137,6 @@
 	    		alert("Please enter a valid 5-digit zipcode.");
 	    		return;
 	    	}
-	    }
-
-	    DemandController.prototype.addOrRemoveTargets = function () {
-
-			if ($(this).hasClass("active")) {
-				DemandView.targetRemoved(event);
-				console.log("Target removed");
-			}
-
-			else {
-				DemandView.targetAdded(event);
-				console.log("Target added");
-			}
 	    }
 
 
