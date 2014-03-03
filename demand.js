@@ -292,7 +292,7 @@
       // Format place address as only street address
       var addressSnippet = place.formatted_address.split(",", 2);
 
-      var retailerListItem = $('<li><button class="btn btn-default btn-sm retailer-results-btn"><span class="place-name">' + place.name + '</span><span class="retailer-results-list-address">  ' + addressSnippet + '</span></button></li>');
+      var retailerListItem = $('<li><button class="btn btn-default btn-sm retailer-results-btn"><span class="place-name">' + place.name + '</span><span class="retailer-results-list-address">  ' + addressSnippet + " " + '</span><span class="glyphicon glyphicon-plus"></span></button></li>');
 
       var marker = new google.maps.Marker({
         map: map,
