@@ -103,6 +103,7 @@
 			// user submits zip code
 			$("form#zip-search-demand").submit(this.searchZip.bind(this));
 			// user chooses targets
+			$("#retailer-results-list").on("click", "button", this.addOrRemoveTargets.bind(this));
 			// user removes targets
 			// user sends message
 		}
@@ -114,7 +115,7 @@
 			zipcode = $("#zip-entry").val();
 			if (zipcode.length == 5) {
 				demandView.showDemandPage();
-		    	searchUserInformation(zipcode);
+				searchUserInformation(zipcode);
 		    	return zipcode;
 	    	}
 	    	else {
@@ -122,6 +123,23 @@
 	    		return;
 	    	}
 	    }
+
+	    DemandController.prototype.addOrRemoveTargets = function () {
+
+			if ($(this).hasClass("active")) {
+				DemandView.targetRemoved(event);
+				console.log("Target removed");
+			}
+
+			else {
+				DemandView.targetAdded(event);
+				console.log("Target added");
+			}
+	    }
+
+
+
+
 
 		//addTarget:
 		//removeTarget:
