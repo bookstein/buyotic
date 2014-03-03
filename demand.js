@@ -174,6 +174,7 @@
 	function initializePage () {
 		demandView = new DemandView();
 		demandController = new DemandController();
+		demandModel = new DemandModel();
 	};
 
 	// load Google Maps
@@ -187,11 +188,6 @@
 
 	loadGoogleMapsScript();
 	//initializePage();
-
-	$("#new-search").click(function () {
-		// clear all input
-		demandView.newSearch();
-	});
 
 //});
 
