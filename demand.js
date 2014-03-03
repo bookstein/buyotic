@@ -10,8 +10,6 @@
 			this.$demand = $("#demand-page");
 			this.$resultsList = $("#retailer-results-list");
 
-			this.$demand.hide();
-
 		// what happens when user clicks "submit" button?
 			// reveal google maps results section (list)
 			//this.$zipSubmit.on("click", this.showDemandPage.bind(this)); MUST COMMENT THIS OUT IN ORDER FOR GMAPS TO WORK

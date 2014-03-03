@@ -104,6 +104,9 @@ section .right-column, section .middle-column, section .left-column {
   font-size: 9.75px; }
 
 /* DEMAND MEAT */
+#demand-page {
+  display: none; }
+
 #retailer-name {
   width: 200px;
   line-height: 2em;
