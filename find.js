@@ -22,47 +22,53 @@ $(document).ready(function () {
 				freeRange: 3
 			};*/
 
-			for (property in checkedOptionsObj) {
+		//View
+		function FindMeatView () {
+			$("#submit-meat-search").on("click", this.submitMeatSearch.bind(this));
+		}
 
+		FindMeatView.prototype.submitMeatSearch = function (event) {
+
+			event.preventDefault();
+
+			var checkedMeat = [];
+			var checkedOptionsObj = {};
+
+			$("#meat-types").find("input:checkbox:checked").each(function () {
+				checkedMeat.push($(this).val());
+				return checkedMeat;
+			});
+
+			/*$("#search-options").find("input:checkbox:checked").each(function () {
+				var property = $(this).val();
+				checkedOptionsObj[property] = property;
+				return checkedOptionsObj;
+			});*/
+
+
+			for (property in checkedOptionsObj) {
 				if($("#" + property).find("input").is(":checked")) {
 					checkedOptionsObj[property] = true;
 				}
 				else {
 					checkedOptionsObj[property] = false;
 				}
+
+				return checkedOptionsObj;
 			}
 
-			// creates an object containing checked options
+			meatChoice = new MeatChoice(checkedMeat, checkedOptionsObj);
 
-				var checkedOptions = {};
-				$("#search-options").find("input:checkbox:checked").each(function () {
-					var property = $(this).val();
-					checkedOptions[property] = true;
-					return checkedOptions;
-				});
+			console.log("checked meat: " + checkedMeat);
+			console.log("checked options: " + checkedOptionsObj);
+		}
 
-				for (var i = 0; i <= checkedMeat.length; i++) {
-					if (checkedMeat[i]) {
-						var meat = checkedMeat[i];
-						console.log(meat);
-						meat = new MeatChoice(meat, checkedOptions);
-						console.log(meat);
-					}
-				}
+		var findMeatView = new FindMeatView();
+		var meatChoice;
 
-		// Controller
-			function submitMeatSearch () {
-				$("#submit-meat-search").on("click", function() {
-					var checkedMeat = [];
-					$("#meat-types").find("input:checkbox:checked").each(function () {
-						checkedMeat.push($(this).val());
-						return checkedMeat;
-					});
-				});
-			};
-
-			});
 	})();
+
+});
 
 	// User submits data about meat in local area (crowdsourcing)
 		//
@@ -70,4 +76,3 @@ $(document).ready(function () {
 		// use node (or MySQL) to interact with Firebase or MongoDB (backend)
 		// node = do it all in JS!
 		// npm can be used to install Mongo or SQL
-});
