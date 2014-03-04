@@ -1,19 +1,18 @@
 $(document).ready(function () {
 
 	var findMeat = (function() {
-		//View
 
 		//Model
 		// user-submitted data
-			function MeatChoice (checkedMeat, checkedOptions, location) {
-				this.checkedMeat = checkedMeat;
-				this.organic = checkedOptions.organic;
-				this.local = checkedOptions.local;
-				this.lean = checkedOptions.lean;
-				this.freeRange = checkedOptions.freeRange;
-				this.zip = $("#zip").val();
-				this.radius = $("#radius").val();
-			};
+		function MeatChoice (checkedMeat, checkedOptions) {
+			this.checkedMeat = checkedMeat;
+			this.organic = checkedOptions.organic;
+			this.local = checkedOptions.local;
+			this.lean = checkedOptions.lean;
+			this.freeRange = checkedOptions.freeRange;
+			this.zip = $("#zip").val();
+			this.radius = $("#radius").val();
+		};
 
 		/*hash map
 			var checkedOptionsObj = {
