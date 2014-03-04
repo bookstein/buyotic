@@ -110,6 +110,9 @@ section .right-column, section .middle-column, section .left-column {
 .checkbox {
   margin-right: 10px; }
 
+.mobile-meat-choice {
+  display: none; }
+
 .map-container {
   background: transparent url(../images/ajax-loader.gif) center no-repeat;
   height: 300px;
