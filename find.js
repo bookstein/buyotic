@@ -48,19 +48,34 @@ $(document).ready(function () {
 
 			for (property in checkedOptionsObj) {
 				if($("#" + property).find("input").is(":checked")) {
-					checkedOptionsObj[property] = true;
+					checkedOptionsObj[property] = property;
 				}
 				else {
-					checkedOptionsObj[property] = false;
+					checkedOptionsObj[property] = null;
 				}
 
 				return checkedOptionsObj;
 			}
 
-			meatChoice = new MeatChoice(checkedMeat, checkedOptionsObj);
+			if (checkedMeat.length > 0) {
 
-			console.log("checked meat: " + checkedMeat);
-			console.log("checked options: " + checkedOptionsObj);
+				if (zipcode.length == 5) {
+					meatChoice = new MeatChoice(checkedMeat, checkedOptionsObj);
+					console.log("checked meat: " + checkedMeat);
+					console.log("checked options: " + checkedOptionsObj);
+					alert("Our site is currently under construction. Please return later to search for antibiotic-free meat near you!");
+				}
+
+				else {
+					alert ("Please enter a valid 5-digit zip code!");
+					$("input[type=text]").val("");
+				}
+			}
+
+			else {
+				alert ("Please select a type of meat!");
+			}
+
 		}
 
 		var findMeatView = new FindMeatView();
