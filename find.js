@@ -14,25 +14,25 @@ $(document).ready(function () {
 			this.radius = $("#radius").val();
 		};
 
-		/*hash map
+		/*hash map*/
+
+		//View
+		function FindMeatView () {
+			$("#submit-form").submit(this.submitMeatSearch.bind(this));
+		}
+
+		FindMeatView.prototype.submitMeatSearch = function (event) {
+			event.preventDefault();
+			var checkedMeat = [];
+			/*hash map
 			var checkedOptionsObj = {
 				organic: 0,
 				local: 1,
 				lean: 2,
 				freeRange: 3
 			};*/
-
-		//View
-		function FindMeatView () {
-			$("#submit-meat-search").on("click", this.submitMeatSearch.bind(this));
-		}
-
-		FindMeatView.prototype.submitMeatSearch = function (event) {
-
-			event.preventDefault();
-
-			var checkedMeat = [];
-			var checkedOptionsObj = {};
+			 var checkedOptionsObj = {};
+			 var zipcode = $("input#zip").val();
 
 			$("#meat-types").find("input:checkbox:checked").each(function () {
 				checkedMeat.push($(this).val());
