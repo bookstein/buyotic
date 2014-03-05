@@ -13,7 +13,7 @@
 		// what happens when user clicks "submit" button?
 			// reveal google maps results section (list)
 			//this.$zipSubmit.on("click", this.showDemandPage.bind(this)); MUST COMMENT THIS OUT IN ORDER FOR GMAPS TO WORK
-			$("#new-search").on('click', this.newSearch.bind(this));
+
 		// what happens when user clicks retailer button?
 			// retailer added to "To" in message with "X" symbol (selection)
 			// retailer button appears pushed
@@ -35,15 +35,6 @@
 		DemandView.prototype.showDemandPage = function () {
 			this.$demand.show();
 			this.$zipSubmit.prop("disabled", true);
-			var newSearchBtnHTML = "<input class='btn btn-default' id='new-search' type='button' value='New Search'/>"
-			this.$zipForm.append(newSearchBtnHTML);
-		}
-
-		DemandView.prototype.newSearch = function () {
-			this.$demand.hide();
-			$("#new-search").hide();
-			$("#retailer-results-list").empty();
-			this.$zipSubmit.prop("disabled", false);
 		}
 
 		// event listener on button click
